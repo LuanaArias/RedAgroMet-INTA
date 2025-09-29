@@ -1,0 +1,40 @@
+.checkbox-label {
+    color: #00998D;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95rem; 
+    transition: color 0.2s;
+    margin-bottom: 1rem;
+}
+
+.checkbox-label:hover {
+    color: #00796B;
+}
+
+.checkbox-input {
+    margin-right: 8px;
+    transform: scale(1.2);
+    accent-color: #00998D;
+}
+
+@media (max-width: 768px) {
+    .checkboxes-container {
+        gap: 15px; 
+    }
+    
+    .checkbox-label {
+        font-size: 0.85rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .checkbox-label {
+        font-size: 0.75rem; 
+    }
+
+    .checkbox-input {
+        transform: scale(1.1);
+        margin-right: 5px;
+    }
+}

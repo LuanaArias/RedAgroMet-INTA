@@ -1,0 +1,7 @@
+.filtros-descarga-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 4rem;
+    margin: 1.5rem 0;
+}

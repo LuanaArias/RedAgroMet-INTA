@@ -1,0 +1,31 @@
+.redes-quienes-somos-items a{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 0.2rem;
+    text-decoration: none;
+}
+
+.quienes-somos-container{
+    border: 1px solid #0000003d;
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+}
+.quienes-somos-section{
+    margin: 1rem;
+}
+
+.quienes-somos-text{
+    width: 70%;
+}
+
+.redes-quienes-somos-items a:visited,
+.redes-quienes-somos-items a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.redes-quienes-somos-items a:hover{
+    color: #B9305B;
+}

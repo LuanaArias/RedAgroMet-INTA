@@ -1,0 +1,11 @@
+.title-principal__container {
+    font-size: 2rem; 
+    font-weight: bold;
+    margin-bottom: 1.5rem; 
+}
+
+@media (max-width: 768px) {
+    .title-principal__container {
+        font-size: 1.8rem;
+    }
+}
