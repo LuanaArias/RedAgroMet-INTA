@@ -1,0 +1,118 @@
+/* src/components/CarrouselInicio/CarrouselInicio.css */
+
+/* --- Contenedor Principal --- */
+.carousel-container {
+    width: 100%;
+    max-width: 900px; 
+    margin: 20px auto;
+    overflow: hidden; /* Oculta los slides que no están en la vista */
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff; 
+}
+
+/* --- Pista de Desplazamiento --- */
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s ease-in-out; /* Animación de slide */
+}
+
+/* --- Slide Individual --- */
+.carousel-slide {
+    flex-shrink: 0; 
+    width: 100%;
+    /* 🛑 CLAVE para apilar: Imagen arriba, texto abajo */
+    display: flex;
+    flex-direction: column; 
+    text-decoration: none; 
+    color: inherit;
+    background-color: #f8f8f8;
+}
+
+/* --- SECCIÓN IMAGEN (Arriba) --- */
+.slide-image-container {
+    width: 100%;
+    height: auto; 
+    max-height: 900px; 
+}
+
+.slide-image {
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+    display: block;
+}
+
+.slide-content {
+    width: 100%; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    align-items: flex-start; 
+}
+
+.slide-title {
+    font-size: 1.5rem;
+    color: #7ca816ff; 
+    margin-bottom: 8px;
+}
+
+.slide-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.4; 
+}
+
+.slide-action-link {
+    display: inline-block;
+    color: #7ca816ff;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.2s;
+    margin-top: auto; 
+}
+
+.slide-action-link:hover {
+    color: rgb(90, 122, 16);
+}
+
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #7ca816ff;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot.active {
+    background-color: rgb(84, 114, 13);
+    transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+    .slide-image-container {
+        height: 150px; 
+    }
+
+    .slide-content {
+        padding: 15px;
+    }
+}

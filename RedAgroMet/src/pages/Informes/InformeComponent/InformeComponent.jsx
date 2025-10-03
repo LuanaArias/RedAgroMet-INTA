@@ -19,18 +19,21 @@ export function InformeComponent({ tipoInforme = 'mensual' }) {
     );
 
     const [numPages, setNumPages] = useState(null);
-    
+    const [pageNumber, setPageNumber] = useState(1); 
+
     const informeActual = opcionesSecundarias.find(op => op.id === informeSeleccionado);
     const downloadUrl = informeActual ? informeActual.url : null;
     const tipoDescripcion = TIPOS_INFORME.find(t => t.id === tipoInforme)?.descripcion || 'Informe';
 
     const onDocumentLoadSuccess = ({ numPages }) => {
         setNumPages(numPages);
+        setPageNumber(1); 
     };
 
     const handleInformeChange = (event) => {
         setInformeSeleccionado(event.target.value);
         setNumPages(null); 
+        setPageNumber(1);
     };
 
     const getPageWidth = () => {
@@ -40,11 +43,13 @@ export function InformeComponent({ tipoInforme = 'mensual' }) {
         return window.innerWidth * 0.9;
     };
 
+    const goToPrevPage = () => setPageNumber(prev => Math.max(prev - 1, 1));
+    const goToNextPage = () => setPageNumber(prev => Math.min(prev + 1, numPages));
+
     return (
         <div className="informes-content-container">
             
             <div className="filtros-descarga-wrapper">
-                
                 {opcionesSecundarias.length > 0 && (
                     <InputSelect 
                         text={`Seleccionar ${tipoDescripcion}`}
@@ -60,33 +65,51 @@ export function InformeComponent({ tipoInforme = 'mensual' }) {
                     downloadUrl={downloadUrl} 
                     tipoInforme={tipoInforme} 
                     informeSeleccionado={informeSeleccionado}
+                    backgroundColor="#E68E27"
                 />
             </div>
             
-            {/* VISTA PREVIA DEL PDF */}
-            <div className="pdf-viewer-wrapper flex justify-center w-full"> 
+            <div className="pdf-viewer-wrapper flex flex-col items-center w-full"> 
                 {downloadUrl ? (
-                    <Document
-                        file={downloadUrl}
-                        onLoadSuccess={onDocumentLoadSuccess}
-                        loading="Cargando vista previa..."
-                        error="Error al cargar el PDF. Asegúrate que la URL sea pública."
-                        className="react-pdf-document shadow-xl rounded-lg overflow-hidden"
-                    >
-                        {numPages && Array.from(
-                            new Array(numPages),
-                            (el, index) => (
-                                <Page 
-                                    key={`page_${index + 1}`}
-                                    pageNumber={index + 1}
-                                    width={getPageWidth()}
-                                    renderAnnotationLayer={true}
-                                    renderTextLayer={true}
-                                    className="pdf-page mb-4 border-b border-gray-300"
-                                />
-                            ),
+                    <>
+                        <Document
+                            file={downloadUrl}
+                            onLoadSuccess={onDocumentLoadSuccess}
+                            loading="Cargando vista previa..."
+                            error="Error al cargar el PDF. Asegúrate que la URL sea pública."
+                            className="react-pdf-document shadow-xl rounded-lg overflow-hidden"
+                        >
+                            <Page 
+                                pageNumber={pageNumber}
+                                width={getPageWidth()}
+                                renderAnnotationLayer={true}
+                                renderTextLayer={true}
+                                className="pdf-page border-b border-gray-300"
+                            />
+                        </Document>
+
+                        {numPages > 1 && (
+                            <div className="pagination-controls flex items-center gap-4 mt-4">
+                                <button 
+                                    onClick={goToPrevPage} 
+                                    disabled={pageNumber <= 1}
+                                    className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
+                                >
+                                    ◀ Anterior
+                                </button>
+                                <span className="text-gray-700">
+                                    Página {pageNumber} de {numPages}
+                                </span>
+                                <button 
+                                    onClick={goToNextPage} 
+                                    disabled={pageNumber >= numPages}
+                                    className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
+                                >
+                                    Siguiente ▶
+                                </button>
+                            </div>
                         )}
-                    </Document>
+                    </>
                 ) : (
                     <div className="pdf-viewer-placeholder p-8 bg-gray-100 rounded-lg text-center text-gray-600 border border-gray-300 w-full max-w-lg">
                         <p className="font-semibold">Seleccione un informe para ver la vista previa.</p>

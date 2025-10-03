@@ -1,17 +1,94 @@
-.filtros-descarga-wrapper{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 4rem;
-    margin: 1.5rem;
+.informes-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-    .filtros-descarga-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    
+.filtros-descarga-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.pdf-viewer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.react-pdf-document {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.pdf-page {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Controles de paginación */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.pagination-controls button {
+  padding: 0.5rem 1rem;
+  background: #cc7b1f; 
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.pagination-controls button:hover {
+  background: #dd8015; 
+  transform: translateY(-1px);
+}
+
+.pagination-controls button:disabled {
+  background: #b88040;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.pagination-controls span {
+  font-size: 0.9rem;
+  color: #374151; 
+}
+
+@media (max-width: 768px) {
+  .pdf-page {
+    width: 90vw !important; 
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pagination-controls button {
+    width: 100%;
+    max-width: 250px;
+  }
 }

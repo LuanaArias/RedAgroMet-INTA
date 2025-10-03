@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'; 
-import { PerspectivaClimatica } from "../pages/Pronosticos/PerspectivaClimatica/PerspectivaClimatica";
-import { PronosticoDiario } from "../pages/Pronosticos/PronosticoDiario/PronosticoDiario";
+import { PerspectivaClimatica } from "../pages/Pronosticos/PerspectivaClimatica/PerspectivaClimatica.jsx";
+import { PronosticoDiario } from "../pages/Pronosticos/PronosticoDiario/PronosticoDiario.jsx";
 
 export function PronosticosRoutes(){
     return(

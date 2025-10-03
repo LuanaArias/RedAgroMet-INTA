@@ -1,12 +1,22 @@
-.nav-bar__contenainer-list{
-  display: flex;
-  flex-direction: column;
+.header__nav-bar-container{
+  /* Ancho por defecto (EXPANDIDO) */
+  width: 280px; 
+  background-color: #46658C;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 15px; 
+  transition: width 0.3s ease-in-out; 
+  overflow-x: hidden; /* Oculta el texto que sobresale al contraerse */
 }
 
-.nav-bar__icon{
-  width: 50px;
+
+.header__nav-bar-container.collapsed{
+  /* Ancho para el estado CONTRAÍDO (solo íconos + padding) */
+  width: 90px; 
 }
-/* Estilos de los items de cada lista */
+
 
 .nav-bar__container-item{
   display: flex;
@@ -18,21 +28,63 @@
   text-decoration: none;
 }
 
+.nav-bar__icon{
+  width: 50px;
+  min-width: 50px; /* Asegura que el icono no se encoja */
+}
+
+/* El TEXTO de los ítems (por defecto, VISIBLE) */
 .nav-bar__item-text{
   font-size: calc(13px + 0.3vw);
   color: white;
-  display: block;
+  white-space: nowrap; 
+  /* Transición para suavizar la aparición/desaparición */
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+  opacity: 1; /* Visible por defecto */
+  visibility: visible;
 }
-.header__nav-bar-container{
-  background-color: #46658C;
+
+.header__nav-bar-container.collapsed .nav-bar__item-text,
+.header__nav-bar-container.collapsed .nav-bar__logo-text,
+.header__nav-bar-container.collapsed .nav-bar__footer-text,
+.header__nav-bar-container.collapsed .nav-bar__footer-logos {
+  /* Ocultar visualmente con transición */
+  opacity: 0;
+  /* Ocultar de la accesibilidad y el flujo */
+  visibility: hidden;
+  /* (Opcional: Si el texto sigue ocupando espacio, puedes usar display: none 
+     pero perderías la animación de opacidad) */
 }
 
-/* Estilos para cuando esté activo un item */
+/* Estilos para el logo superior "Red AgroMet" */
+.nav-bar__header{
+    /* Mantiene el área del logo como clickable */
+    cursor: pointer;
+    padding: 0 1.5rem 20px 1.5rem;
+}
+.nav-bar__logo-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.nav-bar__icon--logo{
+    width: 50px;
+}
 
-
-
-.header__nav-bar-container{
-  background-color: #46658C;
+/* Estilos para el footer (INTA/CIRN) */
+.nav-bar__footer{
+    padding: 20px 1.5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Transición para el footer también */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.nav-bar__footer-text{
+    font-size: 0.75rem;
+    color: white;
+    white-space: nowrap;
+    display: block;
 }
 
 

@@ -7,13 +7,23 @@ const DownloadIcon = () => (
     </svg>
 );
 
-export function ButtonDownloads({ downloadUrl, tipoInforme, informeSeleccionado }) {
+// ButtonDownloads.jsx
+
+// ... (Icono de Descarga) ...
+
+export function ButtonDownloads({ 
+    downloadUrl, 
+    tipoInforme, 
+    downloadName, 
+    informeSeleccionado = '', 
+    backgroundColor = '#1976D2' 
+}) {
     
     const handleDownload = () => {
         if (downloadUrl) {
             const link = document.createElement('a');
             link.href = downloadUrl;
-            link.download = `Informe-${tipoInforme}-${informeSeleccionado}.pdf`;
+            link.download = downloadName || `Informe-${tipoInforme}-${informeSeleccionado}.pdf`; 
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -21,13 +31,16 @@ export function ButtonDownloads({ downloadUrl, tipoInforme, informeSeleccionado 
             alert("Selecciona un informe válido para descargar.");
         }
     };
+    
     const isDisabled = !downloadUrl;
+
     return (
         <button 
             className="download-button"
             onClick={handleDownload}
             disabled={isDisabled} 
-            title={isDisabled ? 'Selecciona un informe' : 'Descargar PDF'}
+            title={isDisabled ? 'Selecciona un informe' : `Descargar ${downloadName ? downloadName : 'archivo'}`}
+            style={{ backgroundColor: backgroundColor }}
         >
             <DownloadIcon /> 
             <span className="button-text">Descargar</span>

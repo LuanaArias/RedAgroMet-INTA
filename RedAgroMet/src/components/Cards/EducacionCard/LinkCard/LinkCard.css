@@ -1,0 +1,74 @@
+/* src/components/Cards/LinkCard/LinkCard.css */
+
+/* --- Estilo Base de la Tarjeta --- */
+.info-card.link-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #ddd;
+    /* Borde lateral naranja/marrón, similar al de tus iconos */
+    border-left: 5px solid #D7683B; 
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-card.link-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Encabezado y Contenido (Mismos que VideoCard) --- */
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.card-icon {
+    margin-right: 10px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+/* --- Pie de página y Botón "Visitar sitio" --- */
+.card-footer {
+    display: flex;
+    /* Empuja el botón a la derecha */
+    justify-content: flex-end; 
+    align-items: center;
+    padding-top: 5px;
+}
+
+/* Estilo del botón de sitio web (el botón amarillo/naranja que se ve en tu imagen) */
+.link-button {
+    /* Es crucial para que el clic funcione */
+    position: relative; 
+    z-index: 10; 
+    
+    background-color: #D7683B; /* Color naranja/marrón */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    /* Elimina el espacio extra del span que no existe aquí */
+    margin-left: auto; 
+}
+
+.link-button:hover {
+    background-color: #c05c30;
+}

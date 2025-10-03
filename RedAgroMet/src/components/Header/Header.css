@@ -1,38 +1,125 @@
+:root {
+  /* Anchos de la barra lateral */
+  --sidebar-width-expanded: 280px; 
+  --sidebar-width-collapsed: 80px; 
+  --sidebar-padding-x: 15px; 
+
+  /* Tamaños de íconos y logos */
+  --logo-size-expanded: 100px;     /* Red AgroMet Icono Grande */
+  --logo-size-collapsed: 50px;     /* Red AgroMet Icono Colapsado */
+  --icon-nav-size: 50px;           /* Íconos de navegación */
+  --logo-inta-height: 80px;        /* Altura del contenedor de logos INTA/CIRN */
+}
+
 .header__container{
-  position: sticky;
+  position: fixed; 
   top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   background-color: #46658C;
   height: 100vh;
-  width: 20vw;
-  padding: 1.5rem 0;
-  gap: 2rem;
-  border-radius: 0px 20px 20px 0;
+  width: var(--sidebar-width-expanded); 
+  padding-top: 1.5rem; 
   z-index: 999;
-}
-.header__logo-inta-container{ 
-  margin-top: auto;
-  padding-top: 1rem; 
-  padding-bottom: 1rem;
+  overflow-x: hidden; 
+  transition: width 0.3s ease-in-out; 
 }
 
-/* Mediaquery */
+.header__container.collapsed{
+  width: var(--sidebar-width-collapsed); 
+}
+
+.header__top-section{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 var(--sidebar-padding-x) 1.5rem var(--sidebar-padding-x); 
+  flex-shrink: 0; 
+}
+
+.header__logo-container{
+  display: flex; 
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header__logo-container .logo__icon { 
+    width: var(--logo-size-expanded);
+    height: var(--logo-size-expanded);
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+.header__container.collapsed .header__logo-container .logo__icon {
+    width: var(--logo-size-collapsed);
+    height: var(--logo-size-collapsed);
+}
+
+.nav-bar__contenainer-list{
+    display: flex;
+    flex-direction: column; 
+    margin-top: 3rem;
+    flex-grow: 1;
+}
+
+.nav-bar__container-item{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.6rem var(--sidebar-padding-x); 
+  transition: all ease .2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-bar__icon{
+  width: var(--icon-nav-size);
+  min-width: var(--icon-nav-size); 
+  height: var(--icon-nav-size);
+  min-height: var(--icon-nav-size);
+}
+.header__hamburguer-container {
+  position: relative;
+  z-index: 1001; 
+}
+
+.nav-bar__item-text{
+  font-size: calc(13px + 0.3vw);
+  color: white;
+  white-space: nowrap; 
+  opacity: 1; 
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+.header__logo-inta-container{ 
+  margin-top: auto; 
+  padding: 1rem var(--sidebar-padding-x); 
+  text-align: center; 
+  height: var(--logo-inta-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header__logo-inta-container .logo-inta__logo { 
+    max-height: 50px; 
+    width: auto;
+    margin: 0 5px;
+}
+
+.header__container.collapsed .nav-bar__item-text,
+.header__container.collapsed .logo__text, 
+.header__container.collapsed .logo-inta__text,
+.header__container.collapsed .logo-inta__texto-adicional {
+    opacity: 0;
+    visibility: hidden;
+}
+
 
 @media (max-width: 1200px) {
-  .header__container{
-    flex-direction: row;
-    justify-content: space-between;
-    border-radius: 0 0 10px 10px;
-    width: 100%;
-    height: auto;
-    align-items: center;
-  }
-  .header__logo-container{
-    padding-left: 0.5rem;
-  }
-  .header__logo-inta-container{
-    display: none;
-  }
-
+  /* Si el menú se convierte en un menú superior en móvil, 
+     debes redefinir la posición y width aquí, y manejar la 
+     apertura/cierre con la lógica de menú desplegable. */
 }

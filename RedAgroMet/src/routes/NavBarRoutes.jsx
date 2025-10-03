@@ -19,9 +19,9 @@ export function NavBarRoutes() {
       
 
       <Route path='/educacion' element={<Educacion />} />
-      <Route path='/quienes-somos' element={<QuienesSomos />} />
+      <Route path='/quienes-somos/*' element={<QuienesSomos />} />
       
-      <Route path='/pronosticos' element={<Navigate to='/pronosticos/pronostico-diario' />} />
+      <Route path='/pronosticos' element={<Navigate to='/pronosticos/diario' />} />
       <Route path='/informes' element={<Navigate to='/informes/semanal' />} />
       
       <Route path="/" element={<Navigate to="/inicio" />} />

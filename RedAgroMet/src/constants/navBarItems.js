@@ -11,7 +11,7 @@ export const navBarItems = [
     name: 'Inicio',
     path: '/',
     icon: QuienesSomosIcon,
-    color: '#93A746'
+    color: '#7ca816ff'
   },
   {
     name: 'Climatología',
