@@ -1,4 +1,4 @@
-.input-container {
+.inputGenericos-input-container {
     min-width: 180px; 
     width: auto;     
     display: flex;
@@ -7,14 +7,14 @@
     font-size: 0.95rem; 
 }
 
-.input-container label {
+.inputGenericos-input-container label {
     font-size: 0.90rem;
     font-weight: 500; 
     margin-left: 0.25rem;
 }
 
-.input-container input,
-.input-container select {
+.inputGenericos-input-container input,
+.inputGenericos-input-container select {
     width: 100%;
     padding: 0.40rem 0.45rem;
     border: 1px solid #d1d5db;
@@ -26,22 +26,22 @@
     color: #6b7280;
 }
 
-.input-container input:focus,
-.input-container select:focus {
+.inputGenericos-input-container input:focus,
+.inputGenericos-input-container select:focus {
     box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.15);
 }
 
 
 @media (min-width: 640px) {
-    .input-container {
+    .inputGenericos-input-container {
         width: 180px; 
     }
     
-    .input-container label {
+    .inputGenericos-input-container label {
         font-size: 0.80rem; 
     }
-    .input-container input,
-    .input-container select {
+    .inputGenericos-input-container input,
+    .inputGenericos-input-container select {
         font-size: 0.85rem;
     }
 }

@@ -1,27 +1,39 @@
-/* src/App.css */
+.app-container {
+  display: flex;
+  flex-direction: row;
+}
 
-/* Estilos para el contenedor principal de contenido */
+
 .main-content {
-  /* Por defecto: margen igual al ancho expandido (empuja el contenido) */
-  margin-left: var(--sidebar-width-expanded, 280px); 
-  /* Ajusta el ancho restante de la pantalla */
-  width: calc(100% - var(--sidebar-width-expanded, 280px)); 
-  padding: 20px; 
+  margin-left: var(--sidebar-width-expanded, 280px);
+  width: calc(100% - var(--sidebar-width-expanded, 280px));
+  padding: 20px;
   transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
   min-height: 100vh;
+  background-color: #f9f9f9; 
+  overflow-x: hidden;
 }
 
-/* 🛑 CLAVE: Usa el selector de hermandad adyacente (+) 🛑
-   Cuando el Header (.header__container) tiene la clase 'collapsed', 
-   ajusta el margin-left del hermano que le sigue (.main-content).
-*/
-.header__container.collapsed + .main-content {
-  /* Margen igual al ancho colapsado */
-  margin-left: var(--sidebar-width-collapsed, 80px); 
-  width: calc(100% - var(--sidebar-width-collapsed, 80px));
+.main-content.collapsed {
+  margin-left: var(--sidebar-width-collapsed, 90px);
+  width: calc(100% - var(--sidebar-width-collapsed, 90px));
 }
 
-/* Asegúrate de que app-container no tenga estilos que interfieran */
-/* .app-container {
-    display: flex; // NO usar flexbox aquí si el header es fixed
-} */
+
+@media (max-width: 1200px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    margin-left: 0; 
+    width: 100%; 
+    padding-top: 80px;
+    transition: none;
+  }
+
+  .main-content.collapsed {
+    margin-left: 0;
+    width: 100%;
+  }
+}

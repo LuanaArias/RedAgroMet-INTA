@@ -1,5 +1,4 @@
 .header__nav-bar-container{
-  /* Ancho por defecto (EXPANDIDO) */
   width: 280px; 
   background-color: #46658C;
   height: 100vh;
@@ -8,12 +7,11 @@
   left: 0;
   padding-top: 15px; 
   transition: width 0.3s ease-in-out; 
-  overflow-x: hidden; /* Oculta el texto que sobresale al contraerse */
+  overflow-x: hidden; 
 }
 
 
 .header__nav-bar-container.collapsed{
-  /* Ancho para el estado CONTRAÍDO (solo íconos + padding) */
   width: 90px; 
 }
 
@@ -30,17 +28,15 @@
 
 .nav-bar__icon{
   width: 50px;
-  min-width: 50px; /* Asegura que el icono no se encoja */
+  min-width: 50px; 
 }
 
-/* El TEXTO de los ítems (por defecto, VISIBLE) */
 .nav-bar__item-text{
   font-size: calc(13px + 0.3vw);
   color: white;
   white-space: nowrap; 
-  /* Transición para suavizar la aparición/desaparición */
   transition: opacity 0.3s ease, visibility 0.3s ease; 
-  opacity: 1; /* Visible por defecto */
+  opacity: 1; 
   visibility: visible;
 }
 
@@ -48,17 +44,12 @@
 .header__nav-bar-container.collapsed .nav-bar__logo-text,
 .header__nav-bar-container.collapsed .nav-bar__footer-text,
 .header__nav-bar-container.collapsed .nav-bar__footer-logos {
-  /* Ocultar visualmente con transición */
   opacity: 0;
-  /* Ocultar de la accesibilidad y el flujo */
   visibility: hidden;
-  /* (Opcional: Si el texto sigue ocupando espacio, puedes usar display: none 
-     pero perderías la animación de opacidad) */
 }
 
-/* Estilos para el logo superior "Red AgroMet" */
 .nav-bar__header{
-    /* Mantiene el área del logo como clickable */
+
     cursor: pointer;
     padding: 0 1.5rem 20px 1.5rem;
 }
@@ -71,13 +62,11 @@
     width: 50px;
 }
 
-/* Estilos para el footer (INTA/CIRN) */
 .nav-bar__footer{
     padding: 20px 1.5rem;
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* Transición para el footer también */
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .nav-bar__footer-text{
@@ -88,51 +77,44 @@
 }
 
 
-/* MediaQuery */
 @media (max-width: 1200px) {
   .nav-bar__contenainer-list{
     position: absolute;
-    width: 100%;
-    max-height: 50vh;
-    left: 0;
+    width: calc(100% + 2rem); 
+    max-height: 0; 
+    left: -1rem;
     right: 0;
-    margin-top: 0.9rem;
+    top: 100%; 
     border-radius: 0 0 20px 20px;
+    background-color: #46658C;
+    flex-direction: column;
+    overflow: hidden; 
+    transition: max-height 0.4s ease, opacity 0.4s ease;
   }
+
   .hidden{
-    transition: animationHeigthHidden ease .4s;
-    display: none;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    display: none; 
   }
+
   .show{
     display: flex;
-    animation: animationHeigthShow ease .4s;
-    overflow: hidden;
+    max-height: 60vh; 
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto; 
+  }
+
+  .nav-bar__container-item{
+    padding: 0.6rem 1.5rem; 
   }
   .nav-bar__container-item svg{
     height: 20px;
-  }
+    width: 20px;
+  } 
   .burguer__nav-bar-container{
     padding-right: 1rem;
-  }
-}
-
-
-/* Animacion para mostrar el menu */
-@keyframes animationHeigthShow {
-  0%{
-    max-height: 0;
-  }
-  100%{
-    max-height: 40vh;
-  }
-}
-
-/* Animacion para ocultar menú */
-@keyframes animationHeigthHidden {
-  0%{
-    max-height: 40vh;
-  }
-  100%{
-    max-height: 0;
   }
 }

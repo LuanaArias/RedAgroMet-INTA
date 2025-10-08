@@ -1,35 +1,87 @@
-.btnHamburguesa__containes{
-  width: 30px;
-  height: 20px;
-  display:none;
+/* ============================== */
+/* BOTÓN HAMBURGUESA ESTÉTICO */
+/* ============================== */
+
+.btnHamburguesa__containes {
+  width: 36px;
+  height: 28px;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;  
-  transition: all ease .2s;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 999;
 }
 
-.btnHamburguesa__line{
-  height: 3px;
+.btnHamburguesa__line {
   width: 100%;
+  height: 3px;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 2px;
+  transition: all 0.35s ease;
+  transform-origin: center;
 }
 
+/* ============================== */
+/* ESTADO "CERRAR" (CRUZ) */
+/* ============================== */
+
+.btnHamburguesa__containes.close {
+  justify-content: center;
+}
+
+.btnHamburguesa__containes.close .f1 {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.btnHamburguesa__containes.close .f2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.btnHamburguesa__containes.close .f3 {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ============================== */
+/* EFECTOS VISUALES EXTRA */
+/* ============================== */
+
+/* Ligero "zoom" al pasar el mouse */
+.btnHamburguesa__containes:hover {
+  transform: scale(1.1);
+}
+
+/* Efecto de color al pasar el mouse */
+.btnHamburguesa__line {
+  background-color: #ffffff;
+}
+
+.btnHamburguesa__containes:hover .btnHamburguesa__line {
+  background-color: #ffb703; /* Dorado suave */
+}
+
+/* ============================== */
+/* RESPONSIVE */
+/* ============================== */
 
 @media (max-width: 1200px) {
-  .btnHamburguesa__containes{
+  .btnHamburguesa__containes {
     display: flex;
+    width: 32px;
+    height: 24px;
   }
-  .close{
-    justify-content: center;
-    align-items: center;
-    & .f1{
-      transform: rotate(40deg)translate(-1px, 3px);
-    }
-    & .f2{
-      display: none;
-    }
-    & .f3{
-      transform: rotate(-40deg)translate(-1.5px, -4px);
-    }
+
+  .btnHamburguesa__line {
+    height: 2.5px;
+  }
+
+  .btnHamburguesa__containes.close .f1 {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .btnHamburguesa__containes.close .f3 {
+    transform: translateY(-7px) rotate(-45deg);
   }
 }

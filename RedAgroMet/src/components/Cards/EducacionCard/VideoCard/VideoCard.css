@@ -1,51 +1,43 @@
-/* src/components/Cards/VideoCard/VideoCard.css */
-
-/* --- Estilo Base de la Tarjeta --- */
-.info-card.video-card {
+.educacion-card.video-card {
     background-color: #fff;
     border-radius: 8px;
     padding: 15px;
-    /* Sombra ligera */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     border: 1px solid #ddd;
-    /* Borde lateral de color para distinguirlo, basado en el color naranja de tus íconos */
     border-left: 5px solid #D7683B; 
     transition: box-shadow 0.2s;
     display: flex;
     flex-direction: column;
 }
 
-.info-card.video-card:hover {
+.educacion-card.video-card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* --- Encabezado y Contenido --- */
-.card-header {
+.educacion-video-card-header {
     display: flex;
     align-items: flex-start;
     margin-bottom: 5px;
 }
 
-.card-icon {
+.educacion-video-card-icon {
     margin-right: 10px;
-    /* El color del SVG lo define el mock, pero aquí puedes asegurar el alineamiento */
 }
 
-.card-title {
+.educacion-video-card-title {
     font-size: 1.1rem;
     font-weight: 700;
     margin: 0;
     color: #333;
 }
 
-.card-content p {
+.educacion-video-card-content p {
     font-size: 0.9rem;
     color: #666;
     margin: 0 0 10px 0;
 }
 
-/* --- Pie de página y Botón "Ver Video" --- */
-.card-footer {
+.educacion-video-card-footer {
     display: flex;
     gap: 3rem;
     justify-content: space-between; 
@@ -53,26 +45,22 @@
     padding-top: 5px;
 }
 
-/* Estilo del texto de duración */
-.card-time-link {
+.educacion-video-card-time-link {
     font-size: 0.85rem;
     color: #999;
 }
 
-/* Botón "Ver Video" - Solo es un enlace de texto/ícono en este diseño */
-.video-button {
-    /* Es crucial para que el clic funcione sobre otros elementos */
+.educacion-video-button {
     position: relative; 
     z-index: 10; 
-    
-    color: #D7683B; /* Color naranja de tus íconos */
+    color: #D7683B; 
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
     transition: color 0.2s;
 }
 
-.video-button:hover {
+.educacion-video-button:hover {
     text-decoration: underline;
     color: #c05c30;
 }

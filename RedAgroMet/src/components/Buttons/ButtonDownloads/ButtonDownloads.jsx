@@ -7,9 +7,6 @@ const DownloadIcon = () => (
     </svg>
 );
 
-// ButtonDownloads.jsx
-
-// ... (Icono de Descarga) ...
 
 export function ButtonDownloads({ 
     downloadUrl, 

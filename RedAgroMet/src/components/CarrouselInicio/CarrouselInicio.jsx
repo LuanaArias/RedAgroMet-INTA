@@ -19,34 +19,32 @@ export function CarrouselInicio({ data = CAROUSEL_DATA, interval = AUTO_SCROLL_I
     };
 
     return (
-        <div className="carousel-container">
+        <div className="inicio-carousel-container">
             <div 
-                className="carousel-track" 
+                className="inicio-carousel-track" 
                 style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
                 {data.map((slide) => (
                     <a 
                         key={slide.id} 
                         href={slide.link} 
-                        className="carousel-slide"
+                        className="inicio-carousel-slide"
                     >
-                        {/* 1. Contenedor de la Imagen */}
-                        <div className="slide-image-container">
+                        <div className="inicio-slide-image-container">
                             <img src={slide.image} alt={slide.title} className="slide-image" />
                         </div>
-                        
-                        {/* 2. Contenedor del Texto (aparece abajo de la imagen) */}
-                        <div className="slide-content">
-                            <h2 className="slide-title">{slide.title}</h2>
-                            <p className="slide-text">{slide.text}</p>
-                            {/* Usamos el nuevo buttonText del mock */}
-                            <span className="slide-action-link">{slide.buttonText || 'Visitar'}</span> 
+
+                        <div className="inicio-slide-content">
+                            <h2 className="inicio-slide-title">{slide.title}</h2>
+                            <p className="inicio-slide-text">{slide.text}</p>
+
+                            <span className="inicio-slide-action-link">{slide.buttonText || 'Visitar'}</span> 
                         </div>
                     </a>
                 ))}
             </div>
 
-            <div className="carousel-dots">
+            <div className="inicio-carousel-dots">
                 {data.map((_, index) => (
                     <button
                         key={index}

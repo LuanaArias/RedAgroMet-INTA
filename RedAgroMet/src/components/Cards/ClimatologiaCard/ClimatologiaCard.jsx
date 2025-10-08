@@ -16,9 +16,9 @@ const ClimatologiaCard = ({
             const valor = resultadosDummy[key] !== undefined ? resultadosDummy[key] : 'N/D';
 
             return (
-                <div key={key} className="variable-item">
-                    <span className="variable-icono">{icono}</span>
-                    {label}: <strong className="variable-valor">{valor}</strong>
+                <div key={key} className="variable-item-cardClimatologia">
+                    <span className="variable-icono-cardClimatologia">{icono}</span>
+                    {label}: <strong className="variable-valor-cardClimatologia">{valor}</strong>
                 </div>
             );
         }
@@ -26,14 +26,14 @@ const ClimatologiaCard = ({
     }).filter(Boolean); // Elimina los `null`
 
     return (
-        <div className='card-resultados'>
-            <h3 className="card-titulo">{estacionNombre}</h3>
-            <p className="card-periodo">Período: {periodoNombre} - {valorNombre}</p>
+        <div className='cardClimatologia-resultados'>
+            <h3 className="cardClimatologia-titulo">{estacionNombre}</h3>
+            <p className="cardClimatologia-periodo">Período: {periodoNombre} - {valorNombre}</p>
             
-            <hr className="card-separador"/>
-            <div className='resultados-grid'>
+            <hr className="cardClimatologia-separador"/>
+            <div className='resultadosCardClimatologia-grid'>
                 {/* Muestra un mensaje si no hay variables seleccionadas para renderizar */}
-                {resultadosJSX.length > 0 ? resultadosJSX : <p className="mensaje-vacio">Selecciona variables para ver resultados.</p>}
+                {resultadosJSX.length > 0 ? resultadosJSX : <p className="mensaje-vacio-cardClimatologia">Selecciona variables para ver resultados.</p>}
             </div>
         </div>
     );

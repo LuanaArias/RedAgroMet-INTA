@@ -1,71 +1,86 @@
-:root {
-  /* Anchos de la barra lateral */
-  --sidebar-width-expanded: 280px; 
-  --sidebar-width-collapsed: 80px; 
-  --sidebar-padding-x: 15px; 
-
-  /* Tamaños de íconos y logos */
-  --logo-size-expanded: 100px;     /* Red AgroMet Icono Grande */
-  --logo-size-collapsed: 50px;     /* Red AgroMet Icono Colapsado */
-  --icon-nav-size: 50px;           /* Íconos de navegación */
-  --logo-inta-height: 80px;        /* Altura del contenedor de logos INTA/CIRN */
+:root{
+  --sidebar-width-expanded: 280px;
+  --sidebar-width-collapsed: 150px;
+  --sidebar-padding-x: 15px;
+  --logo-size-expanded: 50px;
+  --logo-size-collapsed: 70px;
+  --icon-nav-size: 50px;
+  --logo-inta-height: 80px;
 }
 
 .header__container{
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   background-color: #46658C;
   height: 100vh;
-  width: var(--sidebar-width-expanded); 
-  padding-top: 1.5rem; 
+  width: var(--sidebar-width-expanded);
+  padding-top: 1.5rem;
   z-index: 999;
-  overflow-x: hidden; 
-  transition: width 0.3s ease-in-out; 
+  overflow-x: hidden;
+  transition: width 0.3s ease-in-out;
 }
 
 .header__container.collapsed{
-  width: var(--sidebar-width-collapsed); 
+  width: var(--sidebar-width-collapsed);
 }
 
 .header__top-section{
   display: flex;
-  justify-content: space-between; 
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 0 var(--sidebar-padding-x) 1.5rem var(--sidebar-padding-x); 
-  flex-shrink: 0; 
+  gap: 1rem;
+  padding: 10px var(--sidebar-padding-x) 1.5rem var(--sidebar-padding-x);
+  flex-shrink: 0;
 }
-
+.header__container.collapsed .header__top-section {
+  padding: 1rem var(--sidebar-padding-x);
+}
 .header__logo-container{
-  display: flex; 
+  display: flex;
   align-items: center;
   gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
-.header__logo-container .logo__icon { 
-    width: var(--logo-size-expanded);
-    height: var(--logo-size-expanded);
-    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+.header__logo-container .logo__icon {
+  width: var(--logo-size-expanded);
+  height: var(--logo-size-expanded);
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
+
 .header__container.collapsed .header__logo-container .logo__icon {
-    width: var(--logo-size-collapsed);
-    height: var(--logo-size-collapsed);
+  width: var(--logo-size-collapsed);
+  height: var(--logo-size-collapsed);
+}
+
+.header__hamburguer-container {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .nav-bar__contenainer-list{
-    display: flex;
-    flex-direction: column; 
-    margin-top: 3rem;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  flex-grow: 1;
 }
 
 .nav-bar__container-item{
   display: flex;
   gap: 1rem;
   align-items: center;
-  padding: 0.6rem var(--sidebar-padding-x); 
+  padding: 0.6rem var(--sidebar-padding-x);
   transition: all ease .2s;
   cursor: pointer;
   text-decoration: none;
@@ -73,28 +88,24 @@
 
 .nav-bar__icon{
   width: var(--icon-nav-size);
-  min-width: var(--icon-nav-size); 
+  min-width: var(--icon-nav-size);
   height: var(--icon-nav-size);
   min-height: var(--icon-nav-size);
-}
-.header__hamburguer-container {
-  position: relative;
-  z-index: 1001; 
 }
 
 .nav-bar__item-text{
   font-size: calc(13px + 0.3vw);
   color: white;
-  white-space: nowrap; 
-  opacity: 1; 
+  white-space: nowrap;
+  opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s ease, visibility 0.3s ease; 
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.header__logo-inta-container{ 
-  margin-top: auto; 
-  padding: 1rem var(--sidebar-padding-x); 
-  text-align: center; 
+.header__logo-inta-container{
+  margin-top: auto;
+  padding: 1rem var(--sidebar-padding-x);
+  text-align: center;
   height: var(--logo-inta-height);
   display: flex;
   flex-direction: column;
@@ -103,23 +114,57 @@
   flex-shrink: 0;
 }
 
-.header__logo-inta-container .logo-inta__logo { 
-    max-height: 50px; 
-    width: auto;
-    margin: 0 5px;
+.header__logo-inta-container .logo-inta__logo {
+  max-height: 50px;
+  width: auto;
+  margin: 0 5px;
 }
 
 .header__container.collapsed .nav-bar__item-text,
-.header__container.collapsed .logo__text, 
+.header__container.collapsed .logo__text,
 .header__container.collapsed .logo-inta__text,
 .header__container.collapsed .logo-inta__texto-adicional {
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 
 @media (max-width: 1200px) {
-  /* Si el menú se convierte en un menú superior en móvil, 
-     debes redefinir la posición y width aquí, y manejar la 
-     apertura/cierre con la lógica de menú desplegable. */
+  .header__container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    width: 100%;
+    height: auto;
+    align-items: stretch; 
+    padding: 0.5rem 1rem; 
+    overflow: visible;
+    z-index: 1000;
+    border-radius: 0 0 10px 10px; 
+  }
+
+  .header__top-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0; 
+    gap: 0;
+  }
+
+  .header__logo-container{
+    justify-content: flex-start;
+    width: auto;
+    margin-bottom: 0; 
+  }
+
+  .header__logo-inta-container{
+    display: none;
+  }
+
+  .header__hamburguer-container {
+    justify-content: flex-end;
+    width: auto;
+  }
 }

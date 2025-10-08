@@ -1,4 +1,4 @@
-.card-resultados {
+.cardClimatologia-resultados {
     border: 1px solid #00998D;
     padding: 20px;
     border-radius: 10px;
@@ -6,31 +6,31 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-titulo {
+.cardClimatologia-titulo {
     color: #00796B;
     margin-top: 0;
     margin-bottom: 5px;
 }
 
-.card-periodo {
+.cardClimatologia-periodo {
     color: #333;
     font-size: 0.9em;
     margin-bottom: 10px;
 }
 
-.card-separador {
+.cardClimatologia-separador {
     margin: 10px 0;
     border: none;
     border-top: 1px solid #00998D;
 }
 
-.resultados-grid {
+.resultadosCardClimatologia-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 10px;
 }
 
-.variable-item {
+.variable-item-cardClimatologia {
     font-size: 1em;
     color: #004D40;
     display: flex;
@@ -38,17 +38,17 @@
     padding: 5px 0;
 }
 
-.variable-icono {
+.variable-icono-cardClimatologia {
     margin-right: 5px;
 }
 
-.variable-valor {
+.variable-valor-cardClimatologia {
     font-weight: bold;
     color: #00796B;
     margin-left: 3px;
 }
 
-.mensaje-vacio {
+.mensaje-vacio-cardClimatologia {
     grid-column: 1 / -1; 
     text-align: center;
     color: #666;
@@ -57,12 +57,12 @@
 
 /*MEDIA QUERYS */
 @media (max-width: 768px) {
-    .resultados-grid {
+    .resultadosCardClimatologia-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
     }
 }
 @media (max-width: 480px) {
-    .resultados-grid {
+    .resultadosCardClimatologia-grid {
         grid-template-columns: 1fr; /* 1 columna en móviles */
     }
 }

@@ -6,15 +6,15 @@ const CheckboxesVariables = ({
     handleVariableChange,
     VARIABLES_CLIMA
 }) => (
-    <div className='checkboxes-container'>
+    <div className='inputGenericos-checkboxes-container'>
         {Object.keys(VARIABLES_CLIMA).map(key => (
-            <label key={key} className="checkbox-label">
+            <label key={key} className="inputGenericos-checkbox-label">
                 <input
                     type="checkbox"
                     name={key}
                     checked={variablesSeleccionadas[key]}
                     onChange={handleVariableChange}
-                    className="checkbox-input"
+                    className="inputGenericos-checkbox-input"
                 />
                 {VARIABLES_CLIMA[key].icono} {VARIABLES_CLIMA[key].label}
             </label>

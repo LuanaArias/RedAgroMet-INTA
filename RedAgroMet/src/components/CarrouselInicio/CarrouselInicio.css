@@ -1,28 +1,22 @@
-/* src/components/CarrouselInicio/CarrouselInicio.css */
-
-/* --- Contenedor Principal --- */
-.carousel-container {
+.inicio-carousel-container {
     width: 100%;
     max-width: 900px; 
     margin: 20px auto;
-    overflow: hidden; /* Oculta los slides que no están en la vista */
+    overflow: hidden; 
     position: relative;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     background-color: #fff; 
 }
 
-/* --- Pista de Desplazamiento --- */
-.carousel-track {
+.inicio-carousel-track {
     display: flex;
-    transition: transform 0.8s ease-in-out; /* Animación de slide */
+    transition: transform 0.8s ease-in-out;
 }
 
-/* --- Slide Individual --- */
-.carousel-slide {
+.inicio-carousel-slide {
     flex-shrink: 0; 
     width: 100%;
-    /* 🛑 CLAVE para apilar: Imagen arriba, texto abajo */
     display: flex;
     flex-direction: column; 
     text-decoration: none; 
@@ -30,21 +24,20 @@
     background-color: #f8f8f8;
 }
 
-/* --- SECCIÓN IMAGEN (Arriba) --- */
-.slide-image-container {
+.inicio-slide-image-container {
     width: 100%;
     height: auto; 
     max-height: 900px; 
 }
 
-.slide-image {
+.inicio-slide-image {
     width: 100%;
     height: auto; 
     object-fit: cover; 
     display: block;
 }
 
-.slide-content {
+.inicio-slide-content {
     width: 100%; 
     padding: 20px;
     display: flex;
@@ -54,20 +47,20 @@
     align-items: flex-start; 
 }
 
-.slide-title {
+.inicio-slide-title {
     font-size: 1.5rem;
     color: #7ca816ff; 
     margin-bottom: 8px;
 }
 
-.slide-text {
+.inicio-slide-text {
     font-size: 1rem;
     color: #555;
     margin-bottom: 15px;
     line-height: 1.4; 
 }
 
-.slide-action-link {
+.inicio-slide-action-link {
     display: inline-block;
     color: #7ca816ff;
     font-weight: bold;
@@ -76,12 +69,12 @@
     margin-top: auto; 
 }
 
-.slide-action-link:hover {
+.inicio-slide-action-link:hover {
     color: rgb(90, 122, 16);
 }
 
 
-.carousel-dots {
+.inicio-carousel-dots {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -108,11 +101,11 @@
 }
 
 @media (max-width: 600px) {
-    .slide-image-container {
+    .inicio-slide-image-container {
         height: 150px; 
     }
 
-    .slide-content {
+    .inicio-slide-content {
         padding: 15px;
     }
 }
