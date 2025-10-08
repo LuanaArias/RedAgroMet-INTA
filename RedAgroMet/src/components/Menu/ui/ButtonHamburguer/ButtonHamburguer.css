@@ -1,7 +1,3 @@
-/* ============================== */
-/* BOTÓN HAMBURGUESA ESTÉTICO */
-/* ============================== */
-
 .btnHamburguesa__containes {
   width: 36px;
   height: 28px;
@@ -23,10 +19,6 @@
   transform-origin: center;
 }
 
-/* ============================== */
-/* ESTADO "CERRAR" (CRUZ) */
-/* ============================== */
-
 .btnHamburguesa__containes.close {
   justify-content: center;
 }
@@ -44,27 +36,14 @@
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* ============================== */
-/* EFECTOS VISUALES EXTRA */
-/* ============================== */
-
-/* Ligero "zoom" al pasar el mouse */
 .btnHamburguesa__containes:hover {
   transform: scale(1.1);
 }
 
-/* Efecto de color al pasar el mouse */
 .btnHamburguesa__line {
   background-color: #ffffff;
 }
 
-.btnHamburguesa__containes:hover .btnHamburguesa__line {
-  background-color: #ffb703; /* Dorado suave */
-}
-
-/* ============================== */
-/* RESPONSIVE */
-/* ============================== */
 
 @media (max-width: 1200px) {
   .btnHamburguesa__containes {
