@@ -1,0 +1,30 @@
+export const LISTA_OBSERVADORES = [
+    { Estacion: 'Anguil', Responsable: 'Maria Belmonte', Observadores: 'Rosario Opgen Paz' },
+    { Estacion: 'Balcarce', Responsable: 'Nuria Lewczuk', Observadores: 'Aldo Riero, Marcelo Felice, Sebastian Muñoz, Cristrian Fasciglione' },
+    { Estacion: 'Barrow', Responsable: 'Jimena Berriolo', Observadores: 'Oscar Wehrhahne, Stefano Giaccio, Oscar Castro' },
+    { Estacion: 'Bella Vista', Responsable: 'Mario Almirón', Observadores: 'Hamze Leila Mariam, Raúl Cornelio Almiron, Francisco Jose Cardozo, Juan Ramon Campodonico' },
+    { Estacion: 'Castelar', Responsable: '', Observadores: 'Diego Esquivel, Ignacio Oesterheld, Alejandro Thomson' },
+    { Estacion: 'Cerro Azul', Responsable: 'José Angel Olinuck', Observadores: 'Antonio Cardoso' },
+    { Estacion: 'Colonia Benítez', Responsable: 'Alejandro Cáceres', Observadores: 'Alejandro Cáceres' },
+    { Estacion: 'Concordia', Responsable: 'Sergio Ramos', Observadores: 'Rubén Garín' },
+    { Estacion: 'Corrientes', Responsable: 'Carolina Fernandez Lopez', Observadores: 'Ernesto Gomez, Edwin Aguiar, Gabriel Mendez' },
+    { Estacion: 'El Colorado', Responsable: 'Esteban Jorge Bacick', Observadores: 'Esteban Jorge Bacick' },
+    { Estacion: 'Famailla', Responsable: 'Eugenia Zeman', Observadores: 'Walter Bazan, Dario Duarte, Fernando Suarez' },
+    { Estacion: 'Gral Villegas', Responsable: 'Arano Gabriela', Observadores: 'Eduardo Garcia ' },
+    { Estacion: 'Hilario Ascasubi', Responsable: 'Gustavo Zura', Observadores: 'Gustavo Zura, Sebastian Gristman' },
+    { Estacion: 'La Consulta', Responsable: 'Gastón Moyano', Observadores: 'Gastón Moyano' },
+    { Estacion: 'La María (S.Estero)', Responsable: 'Dominguez Nelson', Observadores: 'Oscar Walter Herrera, Rodolfo Antonio Andrada, Hector Miguel Roldán, Juan Nicolás Oliva' },
+    { Estacion: 'Las Breñas', Responsable: 'German Herrera', Observadores: 'German Herrera' },
+    { Estacion: 'M. Juarez', Responsable: 'Vanesa Romina Pegoraro', Observadores: 'Patricio Barros, Fernando Flores' },
+    { Estacion: 'Mercedes (Ctes.)', Responsable: 'Susana Escalante', Observadores: 'Juan Ramón Fernández' },
+    { Estacion: 'Paraná', Responsable: 'Ana Wingeyer', Observadores: 'Gustavo Maffini' },
+    { Estacion: 'Pergamino', Responsable: 'Hernán Sceglio', Observadores: 'Hernán Sceglio' },
+    { Estacion: 'Rafaela', Responsable: 'Hernán Petrabissi', Observadores: 'Hernán Petrabissi' },
+    { Estacion: 'Reconquista', Responsable: 'Gonzalo Santor', Observadores: 'Walter Javier ZANEL, Juan Carlos RODRIGUEZ, Víctor Hugo SPERANZA, Humberto CAPELETTI' },
+    { Estacion: 'P.R. Saenz Peña', Responsable: 'Pedro Pablo Maciel', Observadores: 'Pedro Pablo Maciel' },
+    { Estacion: 'San Pedro', Responsable: 'Maria Rosa Delprino', Observadores: 'Franco Lazzari' },
+    { Estacion: 'Zavalla (Univ.Rosario)', Responsable: 'Verónica Anibalini', Observadores: 'Daniel Pistarelli' },
+
+
+
+];

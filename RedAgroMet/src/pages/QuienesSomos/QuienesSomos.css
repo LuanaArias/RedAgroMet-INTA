@@ -5,19 +5,12 @@
     padding: 0.2rem;
     text-decoration: none;
 }
-
-.quienes-somos-container{
-    border: 1px solid #0000003d;
-    border-radius: 15px;
-    width: 80%;
-    margin: auto;
-}
 .quienes-somos-section{
     margin: 1rem;
 }
 
 .quienes-somos-text{
-    width: 70%;
+    width: 90%;
 }
 
 .redes-quienes-somos-items a:visited,

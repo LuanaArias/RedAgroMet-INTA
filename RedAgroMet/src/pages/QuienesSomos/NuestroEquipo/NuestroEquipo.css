@@ -1,0 +1,97 @@
+.quienes-somos-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-section-title {
+    font-size: 1.8rem;
+    color: #46658C;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #93A746;
+    padding-bottom: 5px;
+    text-align: center; 
+}
+
+.main-team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px; 
+    justify-items: center; 
+    align-items: flex-start; 
+    margin-bottom: 40px;
+}
+
+.other-responsables-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.other-responsables-block {
+    background-color: #46658C;
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.block-instruction {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.responsable-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+}
+
+.responsable-list li {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.section-divider {
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+
+@media (max-width: 1100px) { 
+    .main-team-members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) { 
+    .main-team-members-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 550px) { 
+    .main-team-members-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .quienes-somos-container {
+        padding: 10px;
+    }
+    .team-section-title {
+        font-size: 1.5rem;
+    }
+    .other-responsables-block {
+        padding: 20px;
+    }
+}
