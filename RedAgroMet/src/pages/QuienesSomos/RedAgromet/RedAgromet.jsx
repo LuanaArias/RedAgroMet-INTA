@@ -36,9 +36,6 @@ export function RedAgromet(){
                     <EstacionesTable /> 
                 </div>
                 <div className="quienes-somos-section">
-                    <SubtitlePrincipal text="Nuestro equipo" color="#631a3198" />
-                </div>
-                <div className="quienes-somos-section">
                     <SubtitlePrincipal text="Encontranos en:" color="#631a3198" />
                     <div className="redes-quienes-somos-items">
                         <a href="https://www.whatsapp.com/channel/0029Vb69IuXEQIafXh3cNZ3s" target="_blank" rel="noopener noreferrer">
