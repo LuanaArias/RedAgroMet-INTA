@@ -19,7 +19,6 @@ export function NuestroEquipo(){
                 ))}
             </div>
             <div className="section-divider"></div>
-            <SubtitlePrincipal text="Nuestro equipo" color="#B9305B" className="team-section-title"/>
             <div className="other-responsables-container">
                 <div className="other-responsables-block">
                     <p className="block-instruction">
