@@ -24,7 +24,7 @@ export function NavBar({isCollapsed}){
     const visibilityClass = isCollapsed ? ' hidden' : ' show';
 
   return(
-    <ul className={`nav-bar__contenainer-list${visibilityClass}`}> 
+    <ul className={`nav-bar__container-list${visibilityClass}`}> 
       {
         navBarItems.map((item,index) =>
         <Item key={index} item={item} isCollapsed={isCollapsed}/> 
