@@ -1,66 +1,18 @@
-.educacion-card.video-card {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    border: 1px solid #ddd;
-    border-left: 5px solid #D7683B; 
-    transition: box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-}
-
-.educacion-card.video-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.educacion-video-card-header {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 5px;
-}
-
-.educacion-video-card-icon {
-    margin-right: 10px;
-}
-
-.educacion-video-card-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 0;
-    color: #333;
-}
-
-.educacion-video-card-content p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0 0 10px 0;
-}
-
-.educacion-video-card-footer {
-    display: flex;
+.video-card-footer {
     gap: 3rem;
     justify-content: space-between; 
-    align-items: center;
-    padding-top: 5px;
 }
 
-.educacion-video-card-time-link {
+.video-time-link {
     font-size: 0.85rem;
     color: #999;
 }
 
-.educacion-video-button {
-    position: relative; 
-    z-index: 10; 
+.video-button {
     color: #D7683B; 
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: color 0.2s;
 }
 
-.educacion-video-button:hover {
+.video-button:hover {
     text-decoration: underline;
     color: #c05c30;
 }

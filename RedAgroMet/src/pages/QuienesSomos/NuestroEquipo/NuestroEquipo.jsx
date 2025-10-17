@@ -6,7 +6,7 @@ export function NuestroEquipo(){
     const mainTeam = LISTA_INTEGRANTES_TEAM
     return(
         <>
-            <SubtitlePrincipal text="Nuestro equipo" color="#631a3198" />
+            <SubtitlePrincipal text="Nuestro equipo" color="#B9305B" />
             <div className="main-team-members-grid">
                 {mainTeam.map(member => (
                     <TeamCard 
@@ -19,13 +19,13 @@ export function NuestroEquipo(){
                 ))}
             </div>
             <div className="section-divider"></div>
-
-            <h2 className="team-section-title">Responsables de Observaciones y Mapeo</h2>
+            <SubtitlePrincipal text="Nuestro equipo" color="#B9305B" className="team-section-title"/>
             <div className="other-responsables-container">
                 <div className="other-responsables-block">
                     <p className="block-instruction">
                         Responsables de observaciones meteorológicas, carga de datos y mapeo:
                     </p>
+
                     <ul className="responsable-list">
                         {LISTA_RESPONSABLES_OBSERVACIONES.map(person => (
                             <li key={person.id}>{person.name}</li>

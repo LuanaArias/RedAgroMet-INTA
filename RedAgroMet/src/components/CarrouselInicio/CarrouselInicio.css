@@ -27,7 +27,12 @@
 .inicio-slide-image-container {
     width: 100%;
     height: auto; 
-    max-height: 900px; 
+    max-height: 500px; 
+}
+
+.inicio-slide-image-container img{
+    width: 70vh;
+    height: auto; 
 }
 
 .inicio-slide-image {

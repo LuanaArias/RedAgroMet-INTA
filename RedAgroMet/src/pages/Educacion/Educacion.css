@@ -9,6 +9,7 @@
 .info-column {
     flex: 1; 
     min-width: 0;
+    margin: 0 1.6rem ;
 }
 
 .column-title {

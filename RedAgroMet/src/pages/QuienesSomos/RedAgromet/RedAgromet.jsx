@@ -8,7 +8,7 @@ export function RedAgromet(){
         <>
         <div className="quienes-somos-container">
                 <div className="quienes-somos-section">
-                    <SubtitlePrincipal text="Red AgroMet" color="#631a3198" />
+                    <SubtitlePrincipal text="Red AgroMet" color="#B9305B" />
                     <div className="info-agromet-texto">
                         <p> AgroMet es la Red Agrometeorológica del INTA, un sistema nacional de monitoreo
                         que reúne información meteorológica y agrometeorológica proveniente de las
