@@ -9,10 +9,6 @@ export function Header({ isCollapsed, toggleCollapse }){
     <header className={`header__container ${isCollapsed ? 'collapsed' : ''}`}> 
       <div className="header__top-section">
 
-        <div className="header__logo-container"> 
-          <Logo isCollapsed={isCollapsed} /> 
-        </div>
-
         <div className="header__hamburguer-container">
           <ButtonHamburguer 
             setShowNavBar={toggleCollapse} 
@@ -23,9 +19,6 @@ export function Header({ isCollapsed, toggleCollapse }){
 
       <NavBar isCollapsed={isCollapsed} />
       
-      <div className="header__logo-inta-container">
-        <LogoInta isCollapsed={isCollapsed} /> 
-      </div>
     </header>
   )
 }

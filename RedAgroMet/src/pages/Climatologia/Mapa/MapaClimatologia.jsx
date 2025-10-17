@@ -87,7 +87,7 @@ export function MapaClimatologia() {
     return (
         <div className='climatologia-lista-container'>
             <div className='mapa-selector-wrapper'> 
-                <label className='mapa-selector-label'>Seleccionar Estación en el Mapa</label>
+                <label className='mapa-selector-label'>Seleccionar estación en el mapa</label>
                 <EstacionMapaSelector
                     estaciones={ESTACIONES_OPCIONES}
                     estacionSeleccionadaId={filtros.estacion}

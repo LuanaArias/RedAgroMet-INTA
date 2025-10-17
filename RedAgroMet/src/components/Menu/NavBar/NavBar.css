@@ -1,139 +1,120 @@
-/* ====== NAVBAR CONTAINER PRINCIPAL ====== */
 .header__nav-bar-container {
-  width: 280px; 
-  background-color: #46658C;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 15px; 
-  transition: width 0.3s ease-in-out; 
-  overflow-x: hidden; 
+    width: 280px; 
+    background-color: #46658C;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 15px; 
+    transition: width 0.3s ease-in-out; 
+    overflow-x: hidden; 
 }
 
 .header__nav-bar-container.collapsed {
-  width: 90px; 
+    width: 90px; 
 }
 
-/* ====== LISTA DE ITEMS ====== */
+.header__nav-bar-container.collapsed .nav-bar__container-item {
+    justify-content: center; 
+    padding: 0.8rem 0; 
+}
+
 .nav-bar__container-list {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-bar__container-item {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  padding: 0.6rem 1.5rem;
-  transition: all ease .2s;
-  cursor: pointer;
-  text-decoration: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    transition: all ease .2s;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-bar__container-item:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .nav-bar__container-item.active {
-  background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .nav-bar__icon {
-  width: 50px;
-  min-width: 50px; 
+    width: 30px;
+    min-width: 30px; 
+    display: block;
+    align-items: center;
 }
 
 .nav-bar__item-text {
-  font-size: calc(13px + 0.3vw);
-  color: white;
-  white-space: nowrap; 
-  transition: opacity 0.3s ease, visibility 0.3s ease; 
-  opacity: 1; 
-  visibility: visible;
+    font-size: calc(13px + 0.3vw);
+    color: white;
+    white-space: nowrap; 
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+    opacity: 1; 
+    visibility: visible;
 }
 
 .header__nav-bar-container.collapsed .nav-bar__item-text,
 .header__nav-bar-container.collapsed .nav-bar__logo-text,
 .header__nav-bar-container.collapsed .nav-bar__footer-text,
 .header__nav-bar-container.collapsed .nav-bar__footer-logos {
-  opacity: 0;
-  visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .nav-bar__header {
-  cursor: pointer;
-  padding: 0 1.5rem 20px 1.5rem;
+    cursor: pointer;
+    padding: 0 1.5rem 20px 1.5rem;
 }
 
-.nav-bar__logo-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.nav-bar__icon--logo {
-  width: 50px;
-}
-
-.nav-bar__footer {
-  padding: 20px 1.5rem;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.nav-bar__footer-text {
-  font-size: 0.75rem;
-  color: white;
-  white-space: nowrap;
-  display: block;
-}
 
 @media (max-width: 1200px) {
-  .nav-bar__container-list {
-    position: absolute;
-    width: calc(100% + 2rem); 
-    max-height: 0; 
-    left: -1rem;
-    right: 0;
-    top: 100%; 
-    border-radius: 0 0 20px 20px;
-    background-color: #46658C;
-    flex-direction: column;
-    overflow: hidden; 
-    transition: max-height 0.4s ease, opacity 0.4s ease;
-  }
+    .nav-bar__container-list {
+        position: absolute;
+        width: calc(100% + 2rem); 
+        max-height: 0; 
+        left: -1rem;
+        right: 0;
+        top: 100%; 
+        border-radius: 0 0 20px 20px;
+        background-color: #46658C;
+        flex-direction: column;
+        overflow: hidden; 
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
 
-  .hidden {
-    max-height: 0;
-    opacity: 0;
-    visibility: hidden;
-    display: none; 
-  }
+    .hidden {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        display: none; 
+    }
 
-  .show {
-    display: flex;
-    max-height: 60vh; 
-    opacity: 1;
-    visibility: visible;
-    overflow-y: auto; 
-  }
+    .show {
+        display: flex;
+        max-height: 60vh; 
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto; 
+    }
 
-  .nav-bar__container-item {
-    padding: 0.6rem 1.5rem; 
-  }
+    .nav-bar__container-item {
+        padding: 0.6rem 1.5rem; 
+    }
 
-  .nav-bar__container-item svg {
-    height: 20px;
-    width: 20px;
-  } 
+    .nav-bar__container-item svg {
+        height: 20px;
+        width: 20px;
+    } 
 
-  .burguer__nav-bar-container {
-    padding-right: 1rem;
-  }
+    .burguer__nav-bar-container {
+        padding-right: 1rem;
+    }
 }

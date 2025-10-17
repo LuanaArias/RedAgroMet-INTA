@@ -1,6 +1,6 @@
 .btnHamburguesa__containes {
-  width: 36px;
-  height: 28px;
+  width: 30px;
+  height: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,22 +9,23 @@
   transition: transform 0.3s ease;
   z-index: 999;
 }
-
 .btnHamburguesa__line {
   width: 100%;
-  height: 3px;
+  height: 4px;
   background-color: white;
   border-radius: 2px;
   transition: all 0.35s ease;
   transform-origin: center;
 }
-
+.btnHamburguesa__containes.close .btnHamburguesa__line {
+    width: 85%; 
+}
 .btnHamburguesa__containes.close {
   justify-content: center;
 }
 
 .btnHamburguesa__containes.close .f1 {
-  transform: translateY(9px) rotate(45deg);
+  transform: translateY(10.5px) rotate(45deg);
 }
 
 .btnHamburguesa__containes.close .f2 {
@@ -33,7 +34,7 @@
 }
 
 .btnHamburguesa__containes.close .f3 {
-  transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-10.5px) rotate(-45deg);
 }
 
 .btnHamburguesa__containes:hover {

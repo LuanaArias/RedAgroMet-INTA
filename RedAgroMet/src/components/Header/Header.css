@@ -1,10 +1,10 @@
 :root{
   --sidebar-width-expanded: 280px;
-  --sidebar-width-collapsed: 150px;
+  --sidebar-width-collapsed: 80px;
   --sidebar-padding-x: 15px;
   --logo-size-expanded: 50px;
   --logo-size-collapsed: 70px;
-  --icon-nav-size: 50px;
+  --icon-nav-size: 40px;
   --logo-inta-height: 80px;
 }
 
@@ -166,6 +166,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
   }
 
   .header__logo-container{
