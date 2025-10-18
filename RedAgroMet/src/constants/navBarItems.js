@@ -5,6 +5,7 @@ import { IconInicio } from '../components/ui/IconsMenu/IconInicio';
 import { IconQuienesSomos } from '../components/ui/IconsMenu/IconQuienesSomos';
 import ClimaIcon from '@assets/icons/iconsNavBar/Icono_Climatología.png'; 
 import PronosticoIcon from '@assets/icons/iconsNavBar/Icono_Pronósticos.png';
+import { IconSignIn } from '../components/ui/IconsMenu/IconSignIn';
 
 export const navBarItems = [
     {
@@ -42,5 +43,11 @@ export const navBarItems = [
     path: '/quienes-somos',
     icon: IconQuienesSomos,
     color: '#B9305B'
+  },
+  {
+    name: 'Iniciar sesión',
+    path: '/iniciar-sesion',
+    icon: IconSignIn,
+    color: '#46658C'
   }
 ];

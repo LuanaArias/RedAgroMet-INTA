@@ -5,6 +5,7 @@ import { Pronosticos } from '../pages/Pronosticos/Pronosticos.jsx';
 import { Informes } from '../pages/Informes/Informes.jsx';
 import { Educacion } from '../pages/Educacion/Educacion.jsx';
 import { QuienesSomos } from '../pages/QuienesSomos/QuienesSomos.jsx';
+import { IniciarSesion } from '../pages/IniciarSesion/IniciarSesion.jsx';
 
 export function NavBarRoutes() {
   return (
@@ -20,9 +21,12 @@ export function NavBarRoutes() {
 
       <Route path='/educacion' element={<Educacion />} />
       <Route path='/quienes-somos/*' element={<QuienesSomos />} />
+      <Route path='/quienes-somos' element={<Navigate to={'/quienes-somos/red-agromet'} />} />
       
       <Route path='/pronosticos' element={<Navigate to='/pronosticos/diario' />} />
       <Route path='/informes' element={<Navigate to='/informes/semanal' />} />
+
+      <Route path='/iniciar-sesion' element={<IniciarSesion />} />
       
       <Route path="/" element={<Navigate to="/inicio" />} />
       <Route path="*" element={<Navigate to="/inicio" />} />

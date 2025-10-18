@@ -14,11 +14,10 @@ function App() {
         <>
             <div className="app-container">
                 <Header isCollapsed={isCollapsed} toggleCollapse={toggleCollapse} /> 
-
                 <main className={`main-content ${isCollapsed ? 'collapsed' : ''}`}> 
                     <NavBarRoutes />
                 </main>
-                <Footer />
+                <Footer isCollapsed={isCollapsed} />
             </div>
         </>
     );
