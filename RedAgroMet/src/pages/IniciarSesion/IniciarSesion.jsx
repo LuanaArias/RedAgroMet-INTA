@@ -10,27 +10,31 @@ export function IniciarSesion({ onLogin }){
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(''); 
-        try {
-            const response = await fetch('/api/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password }),
-            });
+        setError('');
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.message || 'Credenciales inválidas.');
-            }
+        // Simulación temporal (mock)
+        const mockUsers = [
+            { username: 'admin', password: 'admin123', role: 'admin' },
+            { username: 'user', password: 'user123', role: 'user' }
+        ];
 
-            const data = await response.json();
-            const token = data.token;
-            localStorage.setItem('authToken', token);
-            onLogin(token); 
-            navigate('/dashboard'); 
-        } catch (err) {
-            setError(err.message);
+        const user = mockUsers.find(
+            (u) => u.username === username && u.password === password
+        );
+
+        if (!user) {
+            setError('Credenciales inválidas');
+            return;
         }
+
+        // Simula un "token" con el rol incluido
+        const tokenData = { username: user.username, role: user.role };
+        const token = btoa(JSON.stringify(tokenData)); // codifica en base64
+
+        localStorage.setItem('authToken', token);
+        onLogin(token);
+
+        navigate('/dashboard');
     };
     return (
         <main className='container-main-login'>

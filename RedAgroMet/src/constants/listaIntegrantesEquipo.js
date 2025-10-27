@@ -1,11 +1,11 @@
-import lucianaDAcuntoImg from '../assets/imgs/team/luciana.png'; 
-import vanesaRamisImg from '../assets/imgs/team/vanesa.png';
-import nataliaGattinoniImg from '../assets/imgs/team/natalia.png';
-import arielSerritellaImg from '../assets/imgs/team/ariel.png';
-import nicolasSolaImg from '../assets/imgs/team/nicolas.png';
-import franciscoSavallImg from '../assets/imgs/team/francisco.png';
+import lucianaDAcuntoImg from '../assets/imgs/team/Luciana.JPG'; 
+import vanesaRamisImg from '../assets/imgs/team/Vane.JPG';
+import nataliaGattinoniImg from '../assets/imgs/team/Nati.JPG';
+import arielSerritellaImg from '../assets/imgs/team/Ariel.JPG';
+import nicolasSolaImg from '../assets/imgs/team/Nico.JPG';
+import franciscoSavallImg from '../assets/imgs/team/Fran.JPG';
 import mariaLujanSoriaImg from '../assets/imgs/team/mariaLujan.png';
-import malvinaMartinezImg from '../assets/imgs/team/malvina.png';
+import malvinaMartinezImg from '../assets/imgs/team/Malvina.JPG';
 
 
 export const LISTA_INTEGRANTES_TEAM = [
