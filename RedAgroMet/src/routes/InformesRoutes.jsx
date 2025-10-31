@@ -1,5 +1,3 @@
-import { ListaClimatologia } from "../pages/Climatologia/Lista/ListaClimatologia";
-import { MapaClimatologia } from "../pages/Climatologia/Mapa/MapaClimatologia";
 import { Route, Routes } from "react-router";
 import { InformeSemanal } from "../pages/Informes/InformeSemanal/InformeSemanal";
 import { InformeMensual } from "../pages/Informes/InformeMensual/InformeMensual";

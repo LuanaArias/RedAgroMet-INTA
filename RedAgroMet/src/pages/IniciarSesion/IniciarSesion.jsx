@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { InputTextoLibre } from '../../components/Inputs/InputText/InputText';
-import { BotonPrueba } from '../../components/ui/BotonPrueba/BotonPrueba';
-import './IniciarSesion.css'
-export function IniciarSesion({ onLogin }){
+import './IniciarSesion.css';
+
+export function IniciarSesion({ onLogin }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
 
-        // Simulación temporal (mock)
+        // --- MOCK TEMPORAL ---
         const mockUsers = [
             { username: 'admin', password: 'admin123', role: 'admin' },
             { username: 'user', password: 'user123', role: 'user' }
@@ -27,15 +28,22 @@ export function IniciarSesion({ onLogin }){
             return;
         }
 
-        // Simula un "token" con el rol incluido
+        // Token simulado, compatible con JWT futuro 
+        //  reemplazar esto por la respuesta real del servidor
         const tokenData = { username: user.username, role: user.role };
-        const token = btoa(JSON.stringify(tokenData)); // codifica en base64
+        const token = btoa(JSON.stringify(tokenData));
 
         localStorage.setItem('authToken', token);
         onLogin(token);
 
-        navigate('/dashboard');
+        const redirectMap = {
+            admin: '/administrador',
+            user: '/subir'
+        };
+
+        navigate(redirectMap[user.role]);
     };
+
     return (
         <main className='container-main-login'>
             <div className='container-message-welcome'>
@@ -50,7 +58,7 @@ export function IniciarSesion({ onLogin }){
                         name="username"
                         value={username}
                         handleChange={(e) => setUsername(e.target.value)}
-                        color="white"     
+                        color="white"
                         placeholder="Ingresá tu usuario"
                     />
                     <InputTextoLibre
@@ -58,15 +66,13 @@ export function IniciarSesion({ onLogin }){
                         name="password"
                         value={password}
                         handleChange={(e) => setPassword(e.target.value)}
-                        type="password"      
+                        type="password"
                         color="white"
                         placeholder="Ingresá tu contraseña"
                     />
-                    <button type="submit" className='login-button'>Entrar</button>                 
+                    <button type="submit" className='login-button'>Entrar</button>
                 </form>
             </div>
-            <BotonPrueba />
         </main>
-        
     );
 }

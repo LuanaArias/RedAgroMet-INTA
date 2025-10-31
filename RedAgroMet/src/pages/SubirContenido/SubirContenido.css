@@ -1,0 +1,30 @@
+.form-subir-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    max-width: 500px;
+    padding: 20px 0;
+}
+
+.dynamic-fields-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    padding: 10px 0;
+}
+
+.submit-button {
+    padding: 10px 20px; 
+    background-color: #7ca816ff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    margin-top: 20px; 
+    transition: background-color 0.3s ease;
+    font-weight: bold; 
+}
+
+.submit-button:hover {
+    background-color: rgb(65, 88, 11); 
+}

@@ -6,27 +6,50 @@ import { Informes } from '../pages/Informes/Informes.jsx';
 import { Educacion } from '../pages/Educacion/Educacion.jsx';
 import { QuienesSomos } from '../pages/QuienesSomos/QuienesSomos.jsx';
 import { IniciarSesion } from '../pages/IniciarSesion/IniciarSesion.jsx';
+import { SubirContenido } from '../pages/SubirContenido/SubirContenido.jsx';
+import { PrivateRoute } from '../pages/PrivateRoutes/PrivateRoutes.jsx';
+import { Administrador } from '../pages/Administrador/Administrador.jsx';
 
-export function NavBarRoutes() {
+export function NavBarRoutes({ isAuthenticated, userRole, onLogin }) {
   return (
-    <Routes>
-      <Route path='/pronosticos/*' element={<Pronosticos />} />
-      <Route path='/informes/*' element={<Informes />} />
-      
+    <Routes>      
       <Route path='/inicio' element={<Inicio />} />
-      {/*Climatologia*/}
+
       <Route path='/climatologia/*' element={<Climatologia />}/>
       <Route path='/climatologia' element={<Navigate to={'/climatologia/mapa'}/>}/>
       
 
       <Route path='/educacion' element={<Educacion />} />
+
       <Route path='/quienes-somos/*' element={<QuienesSomos />} />
       <Route path='/quienes-somos' element={<Navigate to={'/quienes-somos/red-agromet'} />} />
       
       <Route path='/pronosticos' element={<Navigate to='/pronosticos/diario' />} />
-      <Route path='/informes' element={<Navigate to='/informes/semanal' />} />
+      <Route path='/pronosticos/*' element={<Pronosticos />} />
 
-      <Route path='/iniciar-sesion' element={<IniciarSesion />} />
+      <Route path='/informes' element={<Navigate to='/informes/semanal' />} />
+      <Route path='/informes/*' element={<Informes />} />
+
+      <Route path='/iniciar-sesion' element={<IniciarSesion onLogin={onLogin}/>} />
+
+      {/* Ruta privada para subir contenido (cualquier usuario logueado) */}
+      <Route path='/subir' element={
+        <PrivateRoute isAuthenticated={isAuthenticated} userRole={userRole}>
+          <SubirContenido />
+        </PrivateRoute>
+      } />
+
+      {/* Ruta solo para admin */}
+      <Route path='/administrador' element={
+        <PrivateRoute isAuthenticated={isAuthenticated} userRole={userRole} requiredRole="admin">
+          <Administrador />
+        </PrivateRoute>
+      } />
+      <Route path='/administrador/*' element={
+        <PrivateRoute isAuthenticated={isAuthenticated} userRole={userRole} requiredRole="admin">
+          <Administrador />
+        </PrivateRoute>
+      } />
       
       <Route path="/" element={<Navigate to="/inicio" />} />
       <Route path="*" element={<Navigate to="/inicio" />} />

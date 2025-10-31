@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom'; 
+import { Routes, Route } from 'react-router-dom'; 
 import { RedAgromet } from '../pages/QuienesSomos/RedAgromet/RedAgromet.jsx';
 import { NuestroEquipo } from '../pages/QuienesSomos/NuestroEquipo/NuestroEquipo.jsx';
 
