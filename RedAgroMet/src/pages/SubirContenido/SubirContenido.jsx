@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { InputSelect } from '../../components/Inputs/InputSelect/InputSelect';
 import { InputTextoLibre } from '../../components/Inputs/InputText/InputText';
 import { SubtitlePrincipal } from '../../components/Titles/SubtitlePrincipal/SubtitlePrincipal';
+import { uploadContent } from '../../services/ConfigurarUsuario/subirContenido.js';
 import { contentTypesOptions, informeOptions, pronosticoTipoOptions, diarioTipoOptions, perspectivaTipoOptions, trimestralSourceOptions, ensoTypeOptions } from '../../constants/listaSubirContenido';
 import './SubirContenido.css'; 
 
@@ -10,9 +11,12 @@ export function SubirContenido() {
     const [contentType, setContentType] = useState('informe'); 
     const [formData, setFormData] = useState({});
     const [selectedFile, setSelectedFile] = useState(null); 
+    
+    // Estados para feedback
     const [message, setMessage] = useState('');
+    const [isError, setIsError] = useState(false); 
 
-    //  Estados para manejar los selectores anidados
+    // Estados para manejar los selectores anidados
     const [pronosticoTipo, setPronosticoTipo] = useState(''); 
     const [diarioTipo, setDiarioTipo] = useState(''); 
     const [perspectivaTipo, setPerspectivaTipo] = useState(''); 
@@ -21,9 +25,7 @@ export function SubirContenido() {
     
     const colorPrincipal = "#7ca816ff";
     
-    const handleContentTypeChange = (e) => {
-        const newContentType = e.target.value;
-        setContentType(newContentType);
+    const resetFormStates = () => {
         setFormData({});
         setSelectedFile(null); 
         setPronosticoTipo('');
@@ -32,6 +34,14 @@ export function SubirContenido() {
         setTrimestralSource('');
         setEnsoType('');
         setMessage('');
+        setIsError(false);
+    }
+    
+    const handleContentTypeChange = (e) => {
+        const newContentType = e.target.value;
+        setContentType(newContentType);
+        // Resetear todos los estados al cambiar el tipo principal
+        resetFormStates();
     };
 
     const handleChange = (e) => {
@@ -42,7 +52,8 @@ export function SubirContenido() {
     };
 
     const handleFileChange = (e) => {
-        setSelectedFile(e.target.files[0]);
+        // Resetear el input file si no se selecciona nada
+        setSelectedFile(e.target.files ? e.target.files[0] : null); 
     };
     
     const handleNestedSelectChange = (setter) => (e) => {
@@ -52,26 +63,34 @@ export function SubirContenido() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage(`Subiendo ${contentType}...`);
+        setIsError(false);
         
+        // Compila todos los datos necesarios para el servicio
         const finalData = { 
             ...formData, 
             contentType, 
             file: selectedFile,
-            ...(contentType === 'informe' && { informeTipo: formData.informeTipo }),
-            ...(contentType === 'pronostico' && { 
-                pronosticoTipo, 
-                diarioTipo, 
-                perspectivaTipo, 
-                trimestralSource, 
-                ensoType 
-            })
+            // Incluir todos los estados anidados, el servicio se encarga de filtrar los vacíos
+            pronosticoTipo, 
+            diarioTipo, 
+            perspectivaTipo, 
+            trimestralSource, 
+            ensoType,
         };
-        
-        console.log("Datos a enviar:", finalData); 
 
-        setTimeout(() => {
-            setMessage(`¡${contentType.charAt(0).toUpperCase() + contentType.slice(1)} subido con éxito! (Simulación)`);
-        }, 1000);
+        try {
+            await uploadContent(finalData); 
+            
+            setMessage(`¡${contentType.charAt(0).toUpperCase() + contentType.slice(1)} subido con éxito!`);
+            setIsError(false);
+            resetFormStates(); 
+            e.target.reset(); 
+            
+        } catch (error) {
+            setMessage(`Error al subir contenido: ${error.message}`);
+            setIsError(true);
+            console.error('Error de subida:', error);
+        }
     };
     
     const renderContentForm = () => {
@@ -182,8 +201,7 @@ export function SubirContenido() {
     return (
         <div className='subir-contenido-container'>
             <SubtitlePrincipal text="Subir nuevo contenido" color={colorPrincipal}/>
-            
-            <form onSubmit={handleSubmit} className='form-subir-contenido' encType={contentType === 'informe' || contentType === 'pronostico' ? 'multipart/form-data' : 'application/json'}>
+            <form onSubmit={handleSubmit} className='form-subir-contenido'>
                 
                 <InputSelect
                     text="Tipo de Contenido Principal"
@@ -202,8 +220,11 @@ export function SubirContenido() {
                     Subir Contenido
                 </button>
             </form>
-
-            {message && <p>{message}</p>}
+            {message && (
+                <p className={`message-feedback ${isError ? 'message-error' : 'message-success'}`}>
+                    {message}
+                </p>
+            )}
         </div>
     );
 }

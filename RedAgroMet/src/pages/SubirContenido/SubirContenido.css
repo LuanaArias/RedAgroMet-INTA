@@ -1,30 +1,99 @@
+/* Variables de color */
+:root {
+    --primary-green: #7ca816;
+    --text-dark: #333;
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.15);
+    --border-color: #ddd; 
+    --background-subtle: #f8f8f8;
+}
+
+
+.subir-contenido-container {
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 900px; 
+    text-align: center; 
+    font-family: Arial, sans-serif;
+}
+
+
 .form-subir-contenido {
+    max-width: 750px;
+    width: 95%; 
+    margin: 20px auto 40px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-light); 
+    border-left: 5px solid var(--primary-green); 
+    border-right: 1px solid var(--border-color); 
+    border-top: 1px solid var(--border-color);   
+    border-bottom: 1px solid var(--border-color); 
     display: flex;
     flex-direction: column;
-    gap: 20px; 
-    max-width: 500px;
-    padding: 20px 0;
+    gap: 25px; 
+    text-align: left; 
 }
 
 .dynamic-fields-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; 
     padding: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    
+    border-top: 1px dashed var(--border-color);
+    padding-top: 25px;
 }
 
 .submit-button {
-    padding: 10px 20px; 
-    background-color: #7ca816ff; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--primary-green) !important; 
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05em;
+    font-weight: bold;
     cursor: pointer;
-    margin-top: 20px; 
-    transition: background-color 0.3s ease;
-    font-weight: bold; 
+    margin-top: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s, transform 0.1s;
 }
 
 .submit-button:hover {
-    background-color: rgb(65, 88, 11); 
+    background-color: #6a9514 !important; 
+    box-shadow: 0 4px 10px rgba(124, 168, 22, 0.4);
+}
+
+.submit-button:active {
+    transform: translateY(1px);
+}
+
+
+@media (min-width: 768px) {
+    
+    .dynamic-fields-container {
+        grid-template-columns: 1fr 1fr; 
+    }
+    
+    .form-subir-contenido > .inputGenericos-input-container:first-child,
+    .submit-button {
+        grid-column: 1 / -1; 
+    }
+}
+
+.subir-contenido-container p {
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.subir-contenido-container p:not([style*="red"]):not([style*="Error"]) {
+    color: var(--primary-green);
+    background-color: rgba(124, 168, 22, 0.1);
+}
+
+.subir-contenido-container .SubtitlePrincipal {
+    margin-bottom: 25px;
 }

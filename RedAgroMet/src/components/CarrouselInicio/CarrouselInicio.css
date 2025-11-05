@@ -1,6 +1,6 @@
 .inicio-carousel-container {
     width: 100%;
-    max-width: 650px; 
+    max-width: 950px; 
     margin: 20px auto;
     overflow: hidden; 
     position: relative;
@@ -31,7 +31,7 @@
 }
 
 .inicio-slide-image-container img{
-    width: 70vh;
+    width: 105vh;
     height: auto; 
 }
 

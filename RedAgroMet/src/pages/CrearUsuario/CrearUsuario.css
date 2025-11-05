@@ -1,11 +1,93 @@
-.form-container-administrador-crear-usuario {
-    padding: 1rem 0; 
-    display: flex;
-    flex-direction: column; 
-    gap: 20px;
-    max-width: 200px;
+/* Variables de color */
+:root {
+    --primary-green: #7ca816; 
+    --light-green: #a9df98; 
+    --text-dark: #333;
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.15);
+    --success-color: #28a745; 
+    --error-color: #dc3545; 
 }
 
-.message-container {
-    margin-top: 20px;
+
+.section-crear-usuario-container {
+    text-align: center;
+    padding: 20px;
+    margin: 2rem auto;
+    max-width: 1000px; 
+    font-family: Arial, sans-serif;
+}
+
+.form-container-administrador-crear-usuario {
+    max-width: 550px;
+    width: 95%; 
+    margin: 20px auto 40px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    border-left: 5px solid var(--primary-green);
+    display: flex;
+    flex-direction: column; 
+    gap: 25px; 
+    text-align: left; 
+}
+
+
+.submit-button-crear-usuario {
+    display: block;
+    width: 100%;
+    padding: 10px 20px; 
+    margin-top: 20px; 
+    background-color: var(--primary-green); 
+    color: var(--white); 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.1s, box-shadow 0.3s;
+}
+
+.form-container-administrador-crear-usuario button[type="submit"]:hover,
+.submit-button-crear-usuario:hover {
+    background-color: #6a9514 !important; 
+    box-shadow: 0 4px 10px rgba(124, 168, 22, 0.4);
+}
+
+.form-container-administrador-crear-usuario button[type="submit"]:active,
+.submit-button-crear-usuario:active {
+    transform: translateY(1px);
+}
+
+.message-feedback {
+    margin-top: 15px; 
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.message-success {
+    color: var(--success-color);
+    background-color: #e6ffe6;
+    border: 1px solid var(--success-color);
+}
+
+.message-error {
+    color: var(--error-color);
+    background-color: #ffe6e6;
+    border: 1px solid var(--error-color);
+}
+
+
+@media (max-width: 600px) {
+    .form-container-administrador-crear-usuario {
+        padding: 20px 15px; 
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+    .section-crear-usuario-container .subtitle-principal {
+        font-size: 1.8rem;
+    }
 }

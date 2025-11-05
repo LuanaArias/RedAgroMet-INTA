@@ -2,21 +2,23 @@ import React, { useState } from 'react';
 import { InputSelect } from '../../components/Inputs/InputSelect/InputSelect';
 import { InputTextoLibre } from '../../components/Inputs/InputText/InputText';
 import { SubtitlePrincipal } from '../../components/Titles/SubtitlePrincipal/SubtitlePrincipal';
+import { createNewUser } from '../../services/ConfigurarUsuario/crearUsuario';
 import './CrearUsuario.css'
+
 export function CrearUsuario() {
     const [formData, setFormData] = useState({
-        username: '',
-        email: '',
+        user: '',
         password: '',
         role: 'user' 
     });
     const [message, setMessage] = useState('');
-
-    // Opciones para el InputSelect de Rol
+    const [isError, setIsError] = useState(false); 
     const rolesOptions = [
         { id: 'user', descripcion: 'Usuario Estándar' },
         { id: 'admin', descripcion: 'Administrador' }
     ];
+
+    const colorPrincipal = "#7ca816ff";
 
     const handleChange = (e) => {
         setFormData({
@@ -28,48 +30,35 @@ export function CrearUsuario() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage('Creando usuario...');
-        // url de api para crear usuario
-        const API_URL = 'https://...'; 
-        const authToken = localStorage.getItem('authToken'); 
+        setIsError(false);
 
         try {
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${authToken}`, 
-                },
-                body: JSON.stringify(formData),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                setMessage(`Usuario ${formData.username} creado con éxito.`);
-                setFormData({ username: '', email: '', password: '', role: 'user' });
-            } else {
-                setMessage(`Error al crear usuario: ${data.message || response.statusText}`);
-            }
+            await createNewUser(formData);
+            setMessage(`Usuario ${formData.username} creado con éxito.`);
+            setIsError(false);
+            // Limpiar formulario
+            setFormData({ username: '', email: '', password: '', role: 'user' });
         } catch (error) {
-            setMessage('Error de conexión con el servidor.');
+            setMessage(`Error al crear usuario: ${error.message}`);
+            setIsError(true);
             console.error('Error al enviar la petición:', error);
         }
     };
 
     return (
-        <div>
-            <SubtitlePrincipal text="Crear Usuario" color="#7ca816ff"/>
+        <div className='section-crear-usuario-container'>
+            <SubtitlePrincipal text="Crear Usuario" color={colorPrincipal}/>
             <form onSubmit={handleSubmit} className='form-container-administrador-crear-usuario'>
                 
                 {/* Nombre de Usuario */}
                 <InputTextoLibre
                     text="Nombre de Usuario"
-                    name="username"
+                    name="user"
                     type="text"
                     value={formData.username}
                     handleChange={handleChange}
                     placeholder="ej. nombre.apellido"
-                    color="#7ca816ff"
+                    color={colorPrincipal}
                 />
                 
                 {/* Contraseña */}
@@ -80,7 +69,7 @@ export function CrearUsuario() {
                     value={formData.password}
                     handleChange={handleChange}
                     placeholder="Mínimo 8 caracteres"
-                    color="#7ca816ff"
+                    color={colorPrincipal}
                 />
 
                 {/* Rol */}
@@ -90,31 +79,19 @@ export function CrearUsuario() {
                     value={formData.role}
                     handleChange={handleChange}
                     listaDeOpciones={rolesOptions}
-                    color="#7ca816ff"
+                    color={colorPrincipal}
                 />
 
                 <button 
                     type="submit" 
-                    style={{ 
-                        padding: '10px 20px', 
-                        backgroundColor: '#7ca816ff', 
-                        color: 'white', 
-                        border: 'none', 
-                        borderRadius: '5px', 
-                        cursor: 'pointer',
-                        marginTop: '20px' 
-                    }}
+                    className="submit-button-crear-usuario" 
                 >
                     Registrar Usuario
                 </button>
             </form>
 
             {message && (
-                <p style={{ 
-                    marginTop: '15px', 
-                    color: message.startsWith('Error') ? 'red' : 'green',
-                    fontWeight: 'bold'
-                }}>
+                <p className={`message-feedback ${isError ? 'message-error' : 'message-success'}`}>
                     {message}
                 </p>
             )}

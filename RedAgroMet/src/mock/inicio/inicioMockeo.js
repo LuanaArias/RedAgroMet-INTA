@@ -1,5 +1,5 @@
 import ImgClimatologia from '@assets/imgs/inicio/inicio_climatologia.JPG'; 
-import ImgEducacion from '@assets/imgs/inicio/inicio_educacion.jpg'; 
+import ImgEducacion from '@assets/imgs/inicio/inicio_educacion.jpeg'; 
 import ImgInformes from '@assets/imgs/inicio/inicio_informes.jpeg'; 
 import ImgPronosticos from '@assets/imgs/inicio/inicio_pronosticos.jpg'; 
 

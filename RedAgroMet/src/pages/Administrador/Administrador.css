@@ -1,0 +1,18 @@
+.header-administrador-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header-administrador-container button{
+  all: unset; 
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  font: inherit; 
+  color: inherit;
+  cursor: pointer; 
+  -webkit-appearance: none; 
+  -moz-appearance: none;  
+  appearance: none;      
+}

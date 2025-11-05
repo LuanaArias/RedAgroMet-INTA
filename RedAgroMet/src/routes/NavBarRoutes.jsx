@@ -9,6 +9,7 @@ import { IniciarSesion } from '../pages/IniciarSesion/IniciarSesion.jsx';
 import { SubirContenido } from '../pages/SubirContenido/SubirContenido.jsx';
 import { PrivateRoute } from '../pages/PrivateRoutes/PrivateRoutes.jsx';
 import { Administrador } from '../pages/Administrador/Administrador.jsx';
+import { ConfiguracionUsuario } from '../pages/ConfiguracionUsuario/ConfiguracionUsuario.jsx'
 
 export function NavBarRoutes({ isAuthenticated, userRole, onLogin }) {
   return (
@@ -51,6 +52,12 @@ export function NavBarRoutes({ isAuthenticated, userRole, onLogin }) {
         </PrivateRoute>
       } />
       
+      <Route path='/configuracionUsuario' element={
+        <PrivateRoute isAuthenticated={isAuthenticated} userRole={userRole}>
+          <ConfiguracionUsuario />
+        </PrivateRoute>
+      } />
+
       <Route path="/" element={<Navigate to="/inicio" />} />
       <Route path="*" element={<Navigate to="/inicio" />} />
     </Routes>
