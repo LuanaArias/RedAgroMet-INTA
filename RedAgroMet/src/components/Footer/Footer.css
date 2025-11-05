@@ -1,9 +1,17 @@
+/* Variables  */
+:root {
+    --sidebar-width-expanded: 280px;
+    --sidebar-width-collapsed: 80px;
+    --transition-speed-slow: 0.5s;
+}
+
 .footer-fijo {
     position: fixed; 
     bottom: 0; 
     margin-left: var(--sidebar-width-expanded, 280px);
     width: calc(100% - var(--sidebar-width-expanded, 280px));
-    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out; 
+    transition: margin-left var(--transition-speed-slow) ease-in-out, 
+                 width var(--transition-speed-slow) ease-in-out; 
     background-color: #33333385; 
     color: #f7f7f7; 
     padding: 10px 0;
@@ -14,6 +22,13 @@
 .footer-fijo.collapsed {
     margin-left: var(--sidebar-width-collapsed, 90px);
     width: calc(100% - var(--sidebar-width-collapsed, 90px));
+}
+
+@media (min-width: 1201px) {
+    .header__container.collapsed:hover ~ .footer-fijo.collapsed {
+        margin-left: var(--sidebar-width-expanded, 280px);
+        width: calc(100% - var(--sidebar-width-expanded, 280px));
+    }
 }
 
 
@@ -32,6 +47,7 @@
     align-items: center;
     gap: 3rem;
 }
+
 .footer-redes-sociales a{
     display: flex;
     flex-direction: row;
@@ -39,6 +55,11 @@
     gap: 0.5rem;
     text-decoration: none;
     color: #f7f7f7;
+    transition: color 0.2s ease;
+}
+
+.footer-redes-sociales a:hover {
+    color: #a0c360; /* Color de hover sutil */
 }
 
 @media (max-width: 1200px) {
@@ -46,6 +67,12 @@
     .footer-fijo.collapsed {
         margin-left: 0; 
         width: 100%;
+        transition: none; 
     }
 
+    .footer-contenido {
+        justify-content: space-between;
+        padding: 0 10px;
+        flex-wrap: wrap;
+    }
 }
