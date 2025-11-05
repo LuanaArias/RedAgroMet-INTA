@@ -1,3 +1,4 @@
+
 .app-container {
   display: flex;
   flex-direction: row;
@@ -8,7 +9,7 @@
   margin-left: var(--sidebar-width-expanded, 280px);
   width: calc(100% - var(--sidebar-width-expanded, 280px));
   padding: 20px;
-  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+  transition: margin-left 0.5s ease-in-out, width 0.5s ease-in-out;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -16,6 +17,15 @@
 .main-content.collapsed {
   margin-left: var(--sidebar-width-collapsed, 90px);
   width: calc(100% - var(--sidebar-width-collapsed, 90px));
+}
+
+
+@media (min-width: 1201px) {
+    .header__container.collapsed:hover + .main-content.collapsed {
+        /* Fuerza al margen y ancho a volver al estado expandido (anulando el .collapsed del main) */
+        margin-left: var(--sidebar-width-expanded, 280px);
+        width: calc(100% - var(--sidebar-width-expanded, 280px));
+    }
 }
 
 

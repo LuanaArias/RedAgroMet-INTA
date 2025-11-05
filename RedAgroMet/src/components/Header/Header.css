@@ -1,3 +1,4 @@
+/* Variables de color */
 :root{
   --sidebar-width-expanded: 280px;
   --sidebar-width-collapsed: 80px;
@@ -6,7 +7,10 @@
   --logo-size-collapsed: 70px;
   --icon-nav-size: 40px;
   --logo-inta-height: 80px;
+  --transition-speed-slow: 0.5s; 
+  --transition-speed-fast: 0.3s;
 }
+
 
 .header__container{
   position: fixed;
@@ -20,12 +24,30 @@
   padding-top: 1.5rem;
   z-index: 999;
   overflow-x: hidden;
-  transition: width 0.3s ease-in-out;
+  transition: width var(--transition-speed-slow) ease-in-out;
 }
 
 .header__container.collapsed{
   width: var(--sidebar-width-collapsed);
 }
+
+@media (min-width: 1201px) {
+    .header__container.collapsed:hover {
+        width: var(--sidebar-width-expanded);
+    }
+
+    .header__container.collapsed:hover .nav-bar__item-text,
+    .header__container.collapsed:hover .logo__text,
+    .header__container.collapsed:hover .logo-inta__text,
+    .header__container.collapsed:hover .logo-inta__texto-adicional {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity var(--transition-speed-slow) ease var(--transition-speed-fast), 
+                    visibility var(--transition-speed-slow) ease var(--transition-speed-fast);
+    }
+}
+
+
 
 .header__top-section{
   display: flex;
@@ -36,22 +58,24 @@
   padding: 10px var(--sidebar-padding-x) 1.5rem var(--sidebar-padding-x);
   flex-shrink: 0;
 }
+
 .header__container.collapsed .header__top-section {
   padding: 1rem var(--sidebar-padding-x);
 }
+
 .header__logo-container{
   display: flex;
   align-items: center;
   gap: 0.5rem;
   justify-content: center;
   width: 100%;
-  margin-bottom: 0.5rem;
+   margin-bottom: 0.5rem;
 }
 
 .header__logo-container .logo__icon {
   width: var(--logo-size-expanded);
   height: var(--logo-size-expanded);
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  transition: width var(--transition-speed-fast) ease-in-out, height var(--transition-speed-fast) ease-in-out;
 }
 
 .header__container.collapsed .header__logo-container .logo__icon {
@@ -66,7 +90,7 @@
   justify-content: center;
   width: 100%;
   margin-top: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity var(--transition-speed-fast) ease, visibility var(--transition-speed-fast) ease;
 }
 
 .nav-bar__container-list{
@@ -99,8 +123,17 @@
   white-space: nowrap;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity var(--transition-speed-fast) ease, visibility var(--transition-speed-fast) ease;
 }
+
+.header__container.collapsed .nav-bar__item-text,
+.header__container.collapsed .logo__text,
+.header__container.collapsed .logo-inta__text,
+.header__container.collapsed .logo-inta__texto-adicional {
+  opacity: 0;
+  visibility: hidden;
+}
+
 
 .header__logo-inta-container{
   margin-top: auto;
@@ -120,15 +153,6 @@
   margin: 0 5px;
 }
 
-.header__container.collapsed .nav-bar__item-text,
-.header__container.collapsed .logo__text,
-.header__container.collapsed .logo-inta__text,
-.header__container.collapsed .logo-inta__texto-adicional {
-  opacity: 0;
-  visibility: hidden;
-}
-
-
 @media (max-width: 1200px) {
   .header__container{
     position: fixed;
@@ -136,17 +160,17 @@
     left: 0;
     flex-direction: column; 
     justify-content: flex-start; 
-    width: 100%;
+    width: 100%; /* Toma el ancho completo */
     height: auto;
     align-items: stretch; 
     padding: 0.5rem 1rem; 
     overflow: visible;
     z-index: 1000;
     border-radius: 0 0 10px 10px; 
+    transition: none; 
   }
-  .nav-bar__container-list{
-    margin-top: 0rem;
-  }
+
+    /* El estado collapsed en móvil oculta el nav, no lo hace más pequeño */
   .header__container.collapsed{
     position: fixed;
     top: 0;
@@ -162,11 +186,14 @@
     border-radius: 0 0 10px 10px; 
   }
 
+  .nav-bar__container-list{
+    margin-top: 0rem;
+  }
+
   .header__top-section {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
   }
 
   .header__logo-container{
@@ -176,7 +203,7 @@
   }
 
   .header__logo-inta-container{
-    display: none;
+    display: none; /* Ocultar en móvil */
   }
 
   .header__hamburguer-container {

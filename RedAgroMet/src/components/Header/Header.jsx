@@ -5,20 +5,20 @@ import { ButtonHamburguer } from "../Menu/ui/ButtonHamburguer/ButtonHamburguer.j
 import './Header.css'
 
 export function Header({ isCollapsed, toggleCollapse }){
-  return(
-    <header className={`header__container ${isCollapsed ? 'collapsed' : ''}`}> 
-      <div className="header__top-section">
+  return(
+    <header className={`header__container ${isCollapsed ? 'collapsed' : ''}`}> 
+      <div className="header__top-section">
 
-        <div className="header__hamburguer-container">
-          <ButtonHamburguer 
-            setShowNavBar={toggleCollapse} 
-            showNavBar={!isCollapsed} 
-          />
-        </div>
-      </div>
+        <div className="header__hamburguer-container">
+          <ButtonHamburguer 
+            setShowNavBar={toggleCollapse} 
+            showNavBar={!isCollapsed} 
+          />
+        </div>
+      </div>
 
-      <NavBar isCollapsed={isCollapsed} />
-      
-    </header>
-  )
+      <NavBar isCollapsed={isCollapsed} />
+      
+    </header>
+  )
 }
