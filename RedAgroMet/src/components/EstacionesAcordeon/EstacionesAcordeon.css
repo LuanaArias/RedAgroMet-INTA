@@ -19,14 +19,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #46658C; 
-    color: white;
+    background-color: #b9305ba6; 
+    color: rgb(255, 248, 248);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.estaciones-titulo{
+    padding: 1rem 0;
+}
 
 .acordeon-title:hover {
-    background-color: #5d82b3;
+    background-color: #B9305B;
 }
 
 .acordeon-title h3 {
@@ -52,6 +55,6 @@
 }
 
 .acordeon-content.open {
-    max-height: 2000px; 
+    max-height: 4000px; 
     padding: 20px;
 }

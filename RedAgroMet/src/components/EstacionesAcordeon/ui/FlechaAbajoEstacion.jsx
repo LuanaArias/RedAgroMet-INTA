@@ -1,0 +1,7 @@
+export function FlechaAbajoEstacion(){
+    return(
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 10L0 0H14L7 10Z" fill="white"/>
+        </svg>
+    )
+}

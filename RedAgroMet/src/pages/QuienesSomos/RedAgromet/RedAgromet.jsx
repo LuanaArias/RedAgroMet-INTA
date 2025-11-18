@@ -34,7 +34,6 @@ export function RedAgromet(){
                     <div className="foto-team-red-agromet" >
                         <img src={fotoTeam} alt="Foto del team Red Agromet" />
                     </div>
-                        
                     <EstacionesAcordeon />
                 </div>
                 

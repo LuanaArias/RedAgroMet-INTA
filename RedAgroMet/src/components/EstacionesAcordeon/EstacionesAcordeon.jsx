@@ -1,22 +1,22 @@
 import { useState } from 'react';
 import './EstacionesAcordeon.css'; 
 import { EstacionesAutomaticasTable } from '../EstacionesAutTable/EstacionesAutTable.jsx';
-import { EstacionesTable } from '../EstacionesTable/EstacionesTable.jsx'; 
+import { EstacionesTable } from '../EstacionesTable/EstacionesTable.jsx';
+import { FlechaAbajoEstacion } from './ui/flechaAbajoEstacion.jsx';
+import { FlechaArribaEstacion } from './ui/flechaArribaEstacion.jsx';
+import { SubtitlePrincipal } from '../Titles/SubtitlePrincipal/SubtitlePrincipal.jsx';
 
 const AcordeonItem = ({ title, isActive, onToggle, children }) => {
     return (
         <div className="acordeon-item">
-            {/* Título: El botón de despliegue */}
             <div 
                 className={`acordeon-title ${isActive ? 'active' : ''}`}
                 onClick={onToggle}
             >
-                <h3>{title}</h3>
-                {/* Indicador de flecha, usando un simple texto por simplicidad */}
-                <span>{isActive ? '▲' : '▼'}</span>
+                <SubtitlePrincipal text={title} color="#ffffffff" />
+                <span>{isActive ? <FlechaArribaEstacion /> : <FlechaAbajoEstacion />}</span>
             </div>
-            
-            {/* Contenido: Se muestra o se oculta */}
+
             <div className={`acordeon-content ${isActive ? 'open' : 'closed'}`}>
                 {children}
             </div>
@@ -26,8 +26,8 @@ const AcordeonItem = ({ title, isActive, onToggle, children }) => {
 
 
 export function EstacionesAcordeon() {
-    // Estado para controlar qué sección está abierta
-    const [openSection, setOpenSection] = useState('automaticas'); 
+    // Inicializa el estado a null para que ninguna sección esté abierta al inicio.
+    const [openSection, setOpenSection] = useState(null); 
 
     const handleToggle = (sectionName) => {
         setOpenSection(openSection === sectionName ? null : sectionName);
@@ -35,7 +35,10 @@ export function EstacionesAcordeon() {
 
     return (
         <div className="estaciones-dashboard-container">
-            <h2>Gestión de Estaciones</h2>
+            <div className="estaciones-titulo">
+                 <SubtitlePrincipal text="Gestion de estaciones" color="#B9305B" />
+            </div>
+           
 
             {/* Acordeón para Estaciones Automáticas */}
             <AcordeonItem 
@@ -43,7 +46,6 @@ export function EstacionesAcordeon() {
                 isActive={openSection === 'automaticas'}
                 onToggle={() => handleToggle('automaticas')}
             >
-                {/* Contenido: La tabla de estaciones automáticas */}
                 <EstacionesAutomaticasTable />
             </AcordeonItem>
 
@@ -53,7 +55,6 @@ export function EstacionesAcordeon() {
                 isActive={openSection === 'convencionales'}
                 onToggle={() => handleToggle('convencionales')}
             >
-                {/* Contenido: La tabla de estaciones convencionales/observadores */}
                 <EstacionesTable />
             </AcordeonItem>
         </div>
