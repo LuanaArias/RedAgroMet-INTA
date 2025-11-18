@@ -1,11 +1,11 @@
-import { useEstacionesData } from '../../hook/RedAgromet/useGetEstaciones.js'; 
-import './EstacionesTable.css'; 
+import { useEstacionesAut } from '../../hook/RedAgromet/useGetEstacionesAut.js'; 
+import '../EstacionesTable/EstacionesTable.css'; 
 
-export function EstacionesTable() {
-    const { data, isLoading, error } = useEstacionesData();
+export function EstacionesAutomaticasTable() {
+    const { data, isLoading, error } = useEstacionesAut();
 
     if (isLoading) {
-        return <p>Cargando datos de estaciones...</p>;
+        return <p>Cargando datos de estaciones automáticas...</p>;
     }
 
     if (error) {
@@ -13,10 +13,9 @@ export function EstacionesTable() {
     }
 
     if (!data || data.length === 0) {
-        return <p>No hay datos de estaciones disponibles para mostrar.</p>;
+        return <p>No hay datos de estaciones automáticas disponibles para mostrar.</p>;
     }
     
-
     const headers = Object.keys(data[0]);
 
     return (

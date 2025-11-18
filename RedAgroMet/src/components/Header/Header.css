@@ -23,7 +23,6 @@
   width: var(--sidebar-width-expanded);
   padding-top: 1.5rem;
   z-index: 999;
-  overflow-x: hidden;
   transition: width var(--transition-speed-slow) ease-in-out;
 }
 

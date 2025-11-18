@@ -1,0 +1,57 @@
+.estaciones-dashboard-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.acordeon-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden; 
+}
+
+.acordeon-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #46658C; 
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.acordeon-title:hover {
+    background-color: #5d82b3;
+}
+
+.acordeon-title h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.acordeon-title span {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.acordeon-title.active span {
+    transform: rotate(180deg);
+}
+
+.acordeon-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    padding: 0 20px;
+    background-color: white;
+}
+
+.acordeon-content.open {
+    max-height: 2000px; 
+    padding: 20px;
+}

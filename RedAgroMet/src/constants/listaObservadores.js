@@ -20,7 +20,7 @@ export const LISTA_OBSERVADORES = [
     { Estacion: 'Paraná', Responsable: 'Ana Wingeyer', Observadores: 'Gustavo Maffini' },
     { Estacion: 'Pergamino', Responsable: 'Hernán Sceglio', Observadores: 'Hernán Sceglio' },
     { Estacion: 'Rafaela', Responsable: 'Hernán Petrabissi', Observadores: 'Hernán Petrabissi' },
-    { Estacion: 'Reconquista', Responsable: 'Gonzalo Santor', Observadores: 'Walter Javier ZANEL, Juan Carlos RODRIGUEZ, Víctor Hugo SPERANZA, Humberto CAPELETTI' },
+    { Estacion: 'Reconquista', Responsable: 'Gonzalo Santor', Observadores: 'Walter Javier Zanel, Juan Carlos Rodriguez, Víctor Hugo Speranza, Humberto Capeletti' },
     { Estacion: 'P.R. Saenz Peña', Responsable: 'Pedro Pablo Maciel', Observadores: 'Pedro Pablo Maciel' },
     { Estacion: 'San Pedro', Responsable: 'Maria Rosa Delprino', Observadores: 'Franco Lazzari' },
     { Estacion: 'Zavalla (Univ.Rosario)', Responsable: 'Verónica Anibalini', Observadores: 'Daniel Pistarelli' },

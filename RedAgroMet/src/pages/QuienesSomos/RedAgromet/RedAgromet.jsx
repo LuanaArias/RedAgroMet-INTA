@@ -1,9 +1,8 @@
 import { SubtitlePrincipal } from "../../../components/Titles/SubtitlePrincipal/SubtitlePrincipal"
-import { WhatsappIcon } from '../../../components/ui/WhatsappIcon.jsx'
-import { InstagramIcon } from '../../../components/ui/InstagramIcon.jsx'
 import { EstacionesTable } from "../../../components/EstacionesTable/EstacionesTable.jsx"
 import fotoTeam from '../../../assets/imgs/team/fototeam.JPG'
 import './RedAgromet.css'
+import { EstacionesAcordeon } from "../../../components/EstacionesAcordeon/EstacionesAcordeon.jsx"
 export function RedAgromet(){
     return(
         <>
@@ -36,7 +35,7 @@ export function RedAgromet(){
                         <img src={fotoTeam} alt="Foto del team Red Agromet" />
                     </div>
                         
-                    <EstacionesTable /> 
+                    <EstacionesAcordeon />
                 </div>
                 
             </div>

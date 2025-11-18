@@ -4,7 +4,7 @@ import nataliaGattinoniImg from '../assets/imgs/team/Nati.JPG';
 import arielSerritellaImg from '../assets/imgs/team/Ariel.JPG';
 import nicolasSolaImg from '../assets/imgs/team/Nico.JPG';
 import franciscoSavallImg from '../assets/imgs/team/Fran.JPG';
-import mariaLujanSoriaImg from '../assets/imgs/team/mariaLujan.png';
+import mariaLujanSoriaImg from '../assets/imgs/team/Luján.JPG';
 import malvinaMartinezImg from '../assets/imgs/team/Malvina.JPG';
 
 

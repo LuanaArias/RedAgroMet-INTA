@@ -76,7 +76,7 @@
   }
 
   .container-message-welcome,
-  .container-form-custom form {
+  .container-form-custom {
     width: 90%;
     max-width: 400px;
   }
