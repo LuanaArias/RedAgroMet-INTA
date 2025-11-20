@@ -1,60 +1,82 @@
 .inicio-carousel-container {
     width: 100%;
-    max-width: 950px; 
+    max-width: 950px;
     margin: 20px auto;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    background-color: #fff; 
+    background-color: #fff;
+    perspective: 1200px; 
 }
 
 .inicio-carousel-track {
     display: flex;
-    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
 }
 
 .inicio-carousel-slide {
-    flex-shrink: 0; 
+    flex-shrink: 0;
     width: 100%;
     display: flex;
-    flex-direction: column; 
-    text-decoration: none; 
+    flex-direction: column;
+    text-decoration: none;
     color: inherit;
     background-color: #f8f8f8;
+    transform-origin: center;
+    transition: transform .9s ease-in-out, opacity .8s;
+}
+
+.inicio-carousel-track > .inicio-carousel-slide {
+    opacity: 0.3;
+    transform: scale(0.85) rotateY(-35deg);
+}
+
+.inicio-carousel-track > .inicio-carousel-slide.active {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+    z-index: 3;
+}
+
+.inicio-carousel-track > .inicio-carousel-slide.next {
+    transform: scale(0.85) translateX(80px) rotateY(35deg);
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.inicio-carousel-track > .inicio-carousel-slide.prev {
+    transform: scale(0.85) translateX(-80px) rotateY(-35deg);
+    opacity: 0.6;
+    z-index: 2;
 }
 
 .inicio-slide-image-container {
     width: 100%;
-    height: auto; 
-    max-height: 500px; 
+    height: auto;
+    max-height: 500px;
+    overflow: hidden;
 }
 
-.inicio-slide-image-container img{
-    width: 105vh;
-    height: auto; 
-}
-
-.inicio-slide-image {
+.inicio-slide-image-container img {
     width: 100%;
-    height: auto; 
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
 }
 
 .inicio-slide-content {
-    width: 100%; 
+    width: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #ffffff;
-    align-items: flex-start; 
+    align-items: flex-start;
 }
 
 .inicio-slide-title {
     font-size: 1.5rem;
-    color: #7ca816ff; 
+    color: #7ca816ff;
     margin-bottom: 8px;
 }
 
@@ -62,7 +84,7 @@
     font-size: 1.2rem;
     color: #555;
     margin-bottom: 15px;
-    line-height: 1.4; 
+    line-height: 1.4;
 }
 
 .inicio-slide-action-link {
@@ -71,13 +93,12 @@
     font-weight: bold;
     text-decoration: underline;
     transition: color 0.2s;
-    margin-top: auto; 
+    margin-top: auto;
 }
 
 .inicio-slide-action-link:hover {
     color: rgb(90, 122, 16);
 }
-
 
 .inicio-carousel-dots {
     position: absolute;
@@ -95,9 +116,7 @@
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid #7ca816ff;
     cursor: pointer;
-    padding: 0;
-    margin: 0;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: 0.3s;
 }
 
 .dot.active {
@@ -107,7 +126,7 @@
 
 @media (max-width: 600px) {
     .inicio-slide-image-container {
-        height: 150px; 
+        height: 150px;
     }
 
     .inicio-slide-content {

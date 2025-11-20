@@ -1,8 +1,11 @@
-import './SubTitlePrincipal.css'
+import './SubtitlePrincipal.css'
 export function SubtitlePrincipal({text, color}){
     return(
-        <h3 className="sub-title-principal__container" style={{ color: color }}>
-            {text}
-        </h3>
+        <div className="subtitle-principal-container">
+            <h3 style={{ color: color }}>
+                {text}
+            </h3>
+        </div>
+        
     )
 }

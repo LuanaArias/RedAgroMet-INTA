@@ -1,5 +1,4 @@
 import { SubtitlePrincipal } from "../../../components/Titles/SubtitlePrincipal/SubtitlePrincipal"
-import { EstacionesTable } from "../../../components/EstacionesTable/EstacionesTable.jsx"
 import fotoTeam from '../../../assets/imgs/team/fototeam.JPG'
 import './RedAgromet.css'
 import { EstacionesAcordeon } from "../../../components/EstacionesAcordeon/EstacionesAcordeon.jsx"
@@ -10,21 +9,19 @@ export function RedAgromet(){
                 <div className="quienes-somos-section">
                     <SubtitlePrincipal text="Red AgroMet" color="#B9305B" />
                     <div className="info-agromet-texto">
-                        <p> AgroMet es la Red Agrometeorológica del INTA, un sistema nacional de monitoreo
+                        <p>&nbsp;&nbsp;&nbsp;AgroMet es la Red Agrometeorológica del INTA, un sistema nacional de monitoreo
                         que reúne información meteorológica y agrometeorológica proveniente de las
                         estaciones convencionales y automáticas del Instituto Nacional de Tecnología
                         Agropecuaria. Su objetivo es ofrecer datos actualizados y confiables sobre las
                         condiciones del tiempo y del clima que influyen en la producción agropecuaria de todo
                         el país.
                     </p>
-                    <p>
-                            A través de la red se registran y procesan variables como temperatura, precipitación,
+                    <p>&nbsp;&nbsp;&nbsp;A través de la red se registran y procesan variables como temperatura, precipitación,
                         humedad, radiación solar y viento, entre otras, fundamentales para el seguimiento de
                         cultivos, la gestión del riesgo climático y la toma de decisiones en el sector
                         agropecuario.
                     </p>
-                    <p>
-                            En esta página podés consultar la climatología de los observatorios convencionales de
+                    <p>&nbsp;&nbsp;&nbsp;En esta página podés consultar la climatología de los observatorios convencionales de
                         INTA, junto con pronósticos de precipitación, temperatura, heladas, enfriamiento para
                         ovinos y estrés térmico (ITH). También encontrarás informes, herramientas y un
                         espacio educativo con conceptos básicos de agrometeorología y sus aplicaciones en

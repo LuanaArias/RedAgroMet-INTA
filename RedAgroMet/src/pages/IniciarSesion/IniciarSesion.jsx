@@ -38,7 +38,7 @@ export function IniciarSesion({ onLogin }) {
 
         const redirectMap = {
             admin: '/administrador',
-            user: '/subir'
+            user: '/user'
         };
 
         navigate(redirectMap[user.role]);

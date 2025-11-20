@@ -6,10 +6,10 @@ import { Informes } from '../pages/Informes/Informes.jsx';
 import { Educacion } from '../pages/Educacion/Educacion.jsx';
 import { QuienesSomos } from '../pages/QuienesSomos/QuienesSomos.jsx';
 import { IniciarSesion } from '../pages/IniciarSesion/IniciarSesion.jsx';
-import { SubirContenido } from '../pages/SubirContenido/SubirContenido.jsx';
 import { PrivateRoute } from '../pages/PrivateRoutes/PrivateRoutes.jsx';
 import { Administrador } from '../pages/Administrador/Administrador.jsx';
 import { ConfiguracionUsuario } from '../pages/ConfiguracionUsuario/ConfiguracionUsuario.jsx'
+import { Usuario } from '../pages/Usuario/Usuario.jsx';
 
 export function NavBarRoutes({ isAuthenticated, userRole, onLogin }) {
   return (
@@ -34,9 +34,9 @@ export function NavBarRoutes({ isAuthenticated, userRole, onLogin }) {
       <Route path='/iniciar-sesion' element={<IniciarSesion onLogin={onLogin}/>} />
 
       {/* Ruta privada para subir contenido (cualquier usuario logueado) */}
-      <Route path='/subir' element={
+      <Route path='/user' element={
         <PrivateRoute isAuthenticated={isAuthenticated} userRole={userRole}>
-          <SubirContenido />
+          <Usuario />
         </PrivateRoute>
       } />
 

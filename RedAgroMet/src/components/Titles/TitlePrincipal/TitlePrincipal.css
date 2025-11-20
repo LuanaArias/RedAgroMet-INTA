@@ -1,11 +1,15 @@
 .title-principal__container {
     font-size: 2rem; 
     font-weight: bold;
-    margin-bottom: 1.5rem; 
 }
-
+.titlePrincipal-div-container{
+    margin: 1rem 3rem;
+}
 @media (max-width: 768px) {
     .title-principal__container {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
+    }
+    .titlePrincipal-div-container{
+        margin: 1rem 1rem;
     }
 }
