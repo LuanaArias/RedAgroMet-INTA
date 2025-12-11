@@ -3,8 +3,8 @@ import { IconEducacion } from '../components/ui/IconsMenu/IconEducacion';
 import { IconInformes } from '../components/ui/IconsMenu/IconInformes';
 import { IconInicio } from '../components/ui/IconsMenu/IconInicio';
 import { IconQuienesSomos } from '../components/ui/IconsMenu/IconQuienesSomos';
-import ClimaIcon from '@assets/icons/iconsNavBar/Icono_Climatologia.png'; 
-import PronosticoIcon from '@assets/icons/iconsNavBar/Icono_Pronosticos.png';
+import ClimaIcon from '@assets/icons/IconsNavBar/Icono_Climatologia.png'; 
+import PronosticoIcon from '@assets/icons/IconsNavBar/Icono_Pronosticos.png';
 import { IconSignIn } from '../components/ui/IconsMenu/IconSignIn';
 
 export const navBarItems = [
