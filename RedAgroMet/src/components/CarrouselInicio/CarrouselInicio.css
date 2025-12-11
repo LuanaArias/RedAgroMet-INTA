@@ -132,4 +132,10 @@
     .inicio-slide-content {
         padding: 15px;
     }
+    .inicio-slide-title {
+        font-size: 1rem;
+    }
+    .inicio-slide-content p{
+        font-size: 0.9rem;
+    }
 }

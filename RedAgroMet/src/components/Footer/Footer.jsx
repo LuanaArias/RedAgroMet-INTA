@@ -15,11 +15,16 @@ const Footer = ({ isCollapsed }) => {
                 <div className="footer-redes-sociales">
                     <a href={instagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <InstagramIcon />
-                        <p>Instagram</p>
+                        <div className="parrafo-redes-sociales">
+                            <p>Instagram</p>
+                        </div>
+                       
                     </a>
                     <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                         <WhatsappIcon />
-                        <p>WhatsApp</p>
+                        <div className="parrafo-redes-sociales">
+                            <p>WhatsApp</p>
+                        </div>
                     </a>
                 </div>
                 <LogoInta />

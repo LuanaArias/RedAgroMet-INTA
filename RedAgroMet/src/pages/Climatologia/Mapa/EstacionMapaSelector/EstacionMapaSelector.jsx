@@ -59,7 +59,7 @@ export function EstacionMapaSelector({
     };
 
     return (
-        <div style={{ height: '100vh', width: '50%', borderRadius: '8px', overflow: 'hidden' }}> 
+        <div style={{ height: '100vh', width: '100%', borderRadius: '8px', overflow: 'hidden' }}> 
             <MapContainer 
                 key={esEstacionSeleccionada ? 'estacion' : 'nacional'}
                 center={centroActual} 

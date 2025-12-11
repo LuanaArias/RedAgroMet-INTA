@@ -75,9 +75,11 @@
     gap: 2rem;
   }
 
-  .container-message-welcome,
-  .container-form-custom {
+  .container-message-welcome{
     width: 90%;
     max-width: 400px;
+  }
+  .container-form-custom form{
+    margin: auto;
   }
 }

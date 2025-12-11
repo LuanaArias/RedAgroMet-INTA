@@ -57,9 +57,12 @@
     color: #f7f7f7;
     transition: color 0.2s ease;
 }
-
+.footer-redes-sociales a {
+    position: relative;
+    z-index: 1002;
+}
 .footer-redes-sociales a:hover {
-    color: #a0c360; /* Color de hover sutil */
+    color: #a0c360; 
 }
 
 @media (max-width: 1200px) {
@@ -75,4 +78,9 @@
         padding: 0 10px;
         flex-wrap: wrap;
     }
+    
+    .parrafo-redes-sociales{
+        display: none;
+    }
+    
 }
