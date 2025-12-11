@@ -53,5 +53,4 @@ export const LISTA_OBSERVADORES_AUTOMATICA = [
     { Agente: 'Javiero Echague', Estacion: 'Lima' },
     { Agente: 'Fernando Ruiz', Estacion: '25 de Mayo' }
 
-
 ];

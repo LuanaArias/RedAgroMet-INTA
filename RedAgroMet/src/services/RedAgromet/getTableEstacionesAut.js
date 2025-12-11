@@ -1,4 +1,4 @@
-import { LISTA_OBSERVADORES_AUTOMATICA } from '../../constants/listaObservadoresAut.JS'; 
+import { LISTA_OBSERVADORES_AUTOMATICA } from '../../constants/listaObservadoresAut.js'; 
 
 export const estacionesAutomaticasService = {
     async getEstacionesAutomaticas() {
