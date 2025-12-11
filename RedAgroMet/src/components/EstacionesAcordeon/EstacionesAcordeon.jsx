@@ -2,8 +2,8 @@ import { useState } from 'react';
 import './EstacionesAcordeon.css'; 
 import { EstacionesAutomaticasTable } from '../EstacionesAutTable/EstacionesAutTable.jsx';
 import { EstacionesTable } from '../EstacionesTable/EstacionesTable.jsx';
-import { FlechaAbajoEstacion } from './ui/flechaAbajoEstacion.jsx';
-import { FlechaArribaEstacion } from './ui/flechaArribaEstacion.jsx';
+import { FlechaAbajoEstacion } from './ui/FlechaAbajoEstacion.jsx';
+import { FlechaArribaEstacion } from './ui/FlechaArribaEstacion.jsx';
 import { SubtitlePrincipal } from '../Titles/SubtitlePrincipal/SubtitlePrincipal.jsx';
 
 const AcordeonItem = ({ title, isActive, onToggle, children }) => {
